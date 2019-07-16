@@ -1,4 +1,4 @@
-##Limet Less - RTL
+## Limet Less - RTL
 
 Slim It's a Awesome Dashboard Has Most Component To Use In Your Application .. Modern & Clean Responsive Bootstrap 3.3.5 Admin Dashboard Template .. I'm using the bright color version
 
