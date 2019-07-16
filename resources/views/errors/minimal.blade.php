@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -35,22 +35,27 @@
                 position: relative;
             }
 
-            .content {
+            .code {
+                border-right: 2px solid;
+                font-size: 26px;
+                padding: 0 15px 0 15px;
                 text-align: center;
             }
 
-            .title {
-                font-size: 36px;
-                padding: 20px;
+            .message {
+                font-size: 18px;
+                text-align: center;
             }
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            <div class="content">
-                <div class="title">
-                    @yield('message')
-                </div>
+            <div class="code">
+                @yield('code')
+            </div>
+
+            <div class="message" style="padding: 10px;">
+                @yield('message')
             </div>
         </div>
     </body>
