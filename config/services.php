@@ -44,4 +44,7 @@ return [
         ],
     ],
 
+    'ipinfo' => [
+      'access_token' => 'e4ca0f51e23ac5',
+    ],
 ];
