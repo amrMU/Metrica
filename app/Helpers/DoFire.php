@@ -7,7 +7,6 @@ class DoFire
 
     public static function MK_REPORT($data,$user_id,$process,$ip)
     {
-        // dd($data,$user_id,$process,$ip);
         $report = new \App\Report;      
         $report->key = $data['key'];
         $report->text = $data['text'];

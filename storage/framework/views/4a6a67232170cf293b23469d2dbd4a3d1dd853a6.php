@@ -367,21 +367,10 @@
 
                             <!-- Main -->
                             <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
-                            <li class="active"><a href="index.html"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
+                            <li class="active"><a href="<?php echo e(URL::to('admin/home')); ?>"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
                             <li>
-                                <a href="#"><i class="icon-stack2"></i> <span>Page layouts</span></a>
-                                <ul>
-                                    <li><a href="layout_navbar_fixed.html">Fixed navbar</a></li>
-                                    <li><a href="layout_navbar_sidebar_fixed.html">Fixed navbar &amp; sidebar</a></li>
-                                    <li><a href="layout_sidebar_fixed_native.html">Fixed sidebar native scroll</a></li>
-                                    <li><a href="layout_navbar_hideable.html">Hideable navbar</a></li>
-                                    <li><a href="layout_navbar_hideable_sidebar.html">Hideable &amp; fixed sidebar</a></li>
-                                    <li><a href="layout_footer_fixed.html">Fixed footer</a></li>
-                                    <li class="navigation-divider"></li>
-                                    <li><a href="boxed_default.html">Boxed with default sidebar</a></li>
-                                    <li><a href="boxed_mini.html">Boxed with mini sidebar</a></li>
-                                    <li><a href="boxed_full.html">Boxed full width</a></li>
-                                </ul>
+                                <a href="<?php echo e(URL::to('admin/sitemap/create')); ?>"><i class="icon-stack2"></i> <span>sitemap</span></a>
+                               
                             </li>
                             <li>
                                 <a href="#"><i class="icon-copy"></i> <span>Layouts</span></a>

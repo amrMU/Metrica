@@ -26,6 +26,7 @@ class CreateReportsTable extends Migration
             $table->string('latitude');
             $table->string('longitude');
             $table->string('hostname');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

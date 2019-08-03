@@ -15,32 +15,44 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// use Illuminate\Support\Facades\Redis;
-// Route::get('/', function () {
-//     $visits = Redis::incr('visits');
-//     return $visits;
-// });
-use Illuminate\Http\Request;
-Route::get('/ip', function (Request $request) {
-	dd($request->ipinfo);
-    // $location_text = "The IP address ".$request->ipinfo->ip." is located in the city of ".$request->ipinfo->city.'.';
 
-    // return $location_text;
-});
+ Route::get('url', function () {
+     $url = 'https://bedayh4it.com';
 
-Route::get('admin',function(){
-    return view('dashboard.home');
-});
+
+     function parseUrl($url) {
+         $r  = "^(?:(?P<scheme>\w+)://)?";
+         $r .= "(?:(?P<login>\w+):(?P<pass>\w+)@)?";
+         $r .= "(?P<host>(?:(?P<subdomain>[\w\.]+)\.)?" . "(?P<domain>\w+\.(?P<extension>\w+)))";
+         $r .= "(?::(?P<port>\d+))?";
+         $r .= "(?P<path>[\w/]*/(?P<file>\w+(?:\.\w+)?)?)?";
+         $r .= "(?:\?(?P<arg>[\w=&]+))?";
+         $r .= "(?:#(?P<anchor>\w+))?";
+         $r = "!$r!";                                                // Delimiters
+
+         preg_match ( $r, $url, $out );
+
+         return $out;
+     }
+     echo "<pre>";
+     print_r ( parseUrl ( $url ) );
+
+ });
+
+
+
 Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::group(['prefix' => 'admin'], function () {
-		Route::get('home',function(){
-		    return view('dashboard.index');
-		});
+		
+		Route::get('home','Admin\HomeController@index');
+		Route::get('reports_browsing','Admin\ReportsController@GetBrowsingInfo');
+
+		Route::get('sitemap/create','Admin\SitemapGeneratorController@create');
+		Route::post('sitemap','Admin\SitemapGeneratorController@store');
 	});
+
 
 	Route::get('logout','Auth\LoginController@logout');
 });

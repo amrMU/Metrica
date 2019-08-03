@@ -37,4 +37,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function reports()
+    {
+        return $this->hasMany('App\Report','user_id','id');
+    }
+
+    public function last_report()
+    {
+        return  $this->reports()->orderBy('created_at','DESC')->first();
+    }
 }

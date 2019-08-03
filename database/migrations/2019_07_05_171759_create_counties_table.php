@@ -17,6 +17,7 @@ class CreateCountiesTable extends Migration
             $table->increments('id');
             $table->string('name_ar')->default('');
             $table->string('name_en')->default('');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
