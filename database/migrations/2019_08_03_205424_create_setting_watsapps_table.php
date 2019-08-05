@@ -17,7 +17,7 @@ class CreateSettingWatsappsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('setting_id');
             $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');
-            $table->string('whatsapp')->default('');
+            $table->string('whatsapp')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

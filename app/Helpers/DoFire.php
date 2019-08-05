@@ -17,7 +17,7 @@ class DoFire
         $report->location = $ip->country_name.', '.$ip->region.', '.$ip->city;
         $report->longitude = $ip->longitude;
         $report->latitude = $ip->latitude;
-        $report->hostname = $ip->hostname;
+        $report->hostname = @$ip->hostname;
         $report->save();
     }
 }

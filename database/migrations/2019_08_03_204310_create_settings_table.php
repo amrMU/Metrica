@@ -16,14 +16,14 @@ class CreateSettingsTable extends Migration
 
         Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title_ar')->default('');
-            $table->string('title_en')->default('');
+            $table->string('title_ar')->nullable();
+            $table->string('title_en')->nullable();
             $table->longText('content_ar');
             $table->longText('content_en');
             $table->text('meta_tags');
-            $table->string('lat_location')->default('');
-            $table->string('long_location')->default('');
             $table->longText('extirnal_code');
+            $table->unsignedBigInteger('created_by');
+            $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

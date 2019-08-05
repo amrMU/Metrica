@@ -15,7 +15,8 @@ class CreateSettingEmailsTable extends Migration
     {
         Schema::create('setting_emails', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email')->default('');
+            $table->string('email')->nullable();
+            $table->string('department')->nullable();
             $table->unsignedInteger('setting_id');
             $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');
             $table->softDeletes();

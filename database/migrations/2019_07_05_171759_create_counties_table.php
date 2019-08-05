@@ -15,8 +15,8 @@ class CreateCountiesTable extends Migration
     {
         Schema::create('countries', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name_ar')->default('');
-            $table->string('name_en')->default('');
+            $table->string('name_ar')->nullable();
+            $table->string('name_en')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

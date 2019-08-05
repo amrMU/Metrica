@@ -20,12 +20,12 @@ class CreateReportsTable extends Migration
             $table->longText('process');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('ip');
-            $table->string('browser');
-            $table->string('location');
-            $table->string('latitude');
-            $table->string('longitude');
-            $table->string('hostname');
+            $table->string('ip')->nullable();
+            $table->string('browser')->nullable();
+            $table->string('location')->nullable();
+            $table->string('latitude')->nullable();
+            $table->string('longitude')->nullable();
+            $table->string('hostname')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

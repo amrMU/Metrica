@@ -17,10 +17,10 @@ class CreateSettingSocialMediaTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('setting_id');
             $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');
-            $table->string('name_ar')->default('');
-            $table->string('name_en')->default('');
+            $table->string('name_ar')->nullable();
+            $table->string('name_en')->nullable();
             $table->string('icon')->default('img/icon.png');
-            $table->string('url')->default('');
+            $table->string('url')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

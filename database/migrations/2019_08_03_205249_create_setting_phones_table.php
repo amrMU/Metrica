@@ -17,7 +17,7 @@ class CreateSettingPhonesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('setting_id');
             $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');
-            $table->string('phone')->default('');
+            $table->string('phone')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

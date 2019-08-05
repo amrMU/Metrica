@@ -15,8 +15,8 @@ class CreateCitiesTable extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name_ar')->default('');
-            $table->string('name_en')->default('');
+            $table->string('name_ar')->nullable();
+            $table->string('name_en')->nullable();
             $table->integer('country_id')->nullable()->unsigned();
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
             $table->softDeletes();

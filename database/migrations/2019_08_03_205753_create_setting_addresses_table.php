@@ -17,8 +17,10 @@ class CreateSettingAddressesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('setting_id');
             $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');
-            $table->string('address_ar')->default('');
-            $table->string('address_en')->default('');
+            $table->string('address_ar')->nullable();
+            $table->string('address_en')->nullable();
+            $table->string('lat_location')->nullable();
+            $table->string('long_location')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
