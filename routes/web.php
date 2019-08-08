@@ -45,6 +45,7 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::group(['prefix' => 'admin'], function () {
+        Route::get('setting','Admin\SettingController@create');
 		
 		Route::get('home','Admin\HomeController@index');
 		Route::get('reports_browsing','Admin\ReportsController@GetBrowsingInfo');

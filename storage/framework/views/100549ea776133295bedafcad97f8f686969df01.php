@@ -7,7 +7,7 @@
             <div class="page-header page-header-default">
                 <div class="page-header-content">
                     <div class="page-title">
-                        <h4><i class="icon-arrow-right6 position-left"></i> <span class="text-semibold">Home</span> - Dashboard</h4>
+                        <h4><i class="icon-arrow-right6 position-left"></i> <span class="text-semibold"><?php echo app('translator')->getFromJson('home.home'); ?></span> - <?php echo app('translator')->getFromJson('home.dashboard'); ?></h4>
                     </div>
 
                     <div class="heading-elements">
@@ -21,8 +21,8 @@
 
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
-                        <li><a href="index.html"><i class="icon-home2 position-left"></i> Home</a></li>
-                        <li class="active">Dashboard</li>
+                        <li><a href="index.html"><i class="icon-home2 position-left"></i> <?php echo app('translator')->getFromJson('home.home'); ?></a></li>
+                        <li class="active"> <?php echo app('translator')->getFromJson('home.dashboard'); ?></li>
                     </ul>
 
                     <ul class="breadcrumb-elements">
@@ -30,7 +30,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="icon-gear position-left"></i>
-                                Settings
+                                <?php echo app('translator')->getFromJson('home.settings'); ?>
                                 <span class="caret"></span>
                             </a>
 
@@ -39,7 +39,7 @@
                                 <li><a href="#"><i class="icon-statistics"></i> Analytics</a></li>
                                 <li><a href="#"><i class="icon-accessibility"></i> Accessibility</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#"><i class="icon-gear"></i> All settings</a></li>
+                                <li><a href="<?php echo e(URL::to('admin/setting')); ?>"><i class="icon-gear"></i><?php echo app('translator')->getFromJson('home.general_settings'); ?></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -1615,6 +1615,5 @@
 
         </div>
         <!-- /main content -->
-
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('dashboard.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

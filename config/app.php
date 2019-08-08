@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => env('local_lang', 'ar'),
 
     /*
     |--------------------------------------------------------------------------
@@ -175,6 +175,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
+        //laravel debuger
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -227,8 +229,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         // 'LaravelAnalytics' =>Spatie\Analytics\LaravelAnalyticsFacade::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
-
-
+        //laravel debuger
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

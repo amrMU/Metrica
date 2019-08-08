@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
 
+  
     <!-- Global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
     <link href="<?php echo e(asset('/')); ?>assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
@@ -14,7 +15,7 @@
     <link href="<?php echo e(asset('/')); ?>assets/css/components.css" rel="stylesheet" type="text/css">
     <link href="<?php echo e(asset('/')); ?>assets/css/colors.css" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
-
+    
     <!-- Core JS files -->
     <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/loaders/pace.min.js"></script>
     <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/core/libraries/jquery.min.js"></script>
@@ -29,9 +30,25 @@
     <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/forms/styling/uniform.min.js"></script>
     <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
     <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/ui/moment/moment.min.js"></script>
+
     <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/pickers/daterangepicker.js"></script>
 
+    
+    <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/forms/validation/validate.min.js"></script>
+    <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/forms/inputs/touchspin.min.js"></script>
+    <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/forms/selects/select2.min.js"></script>
+
+    <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/forms/styling/switch.min.js"></script>
+  
+    <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/forms/tags/tagsinput.min.js"></script>
+    <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/forms/tags/tokenfield.min.js"></script>
+    <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/ui/prism.min.js"></script>
+    <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js"></script>
+
     <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/core/app.js"></script>
+    <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/pages/form_validation.js"></script>
+    <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/pages/form_tags_input.js"></script>
+
     <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/pages/dashboard.js"></script>
 
     <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/ui/ripple.min.js"></script>
@@ -352,7 +369,7 @@
                             <li><a href="#"><i class="icon-coins"></i> <span>My balance</span></a></li>
                             <li><a href="#"><i class="icon-comment-discussion"></i> <span><span class="badge bg-teal-400 pull-right">58</span> Messages</span></a></li>
                             <li class="divider"></li>
-                            <li><a href="#"><i class="icon-cog5"></i> <span>Account settings</span></a></li>
+                            <li><a href="#"><i class="icon-cog5"></i> <span><?php echo app('translator')->getFromJson('home.general_settings'); ?></span></a></li>
                             <li><a href="<?php echo e(URL::to('/logout')); ?>"><i class="icon-switch2"></i> <span>Logout</span></a></li>
                         </ul>
                     </div>
@@ -1097,6 +1114,6 @@
 
 </div>
 <!-- /page container -->
-
+<?php echo $__env->yieldContent('jsCode'); ?>
 </body>
 </html>

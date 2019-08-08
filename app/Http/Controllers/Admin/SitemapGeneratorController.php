@@ -10,11 +10,6 @@ use Session;
 
 class SitemapGeneratorController extends Controller
 {
-    // public function __construct(SiteMapeRequest $request)
-    // {
-    //  $this->request = $request;
-    // }    
-
 
     public function create()
     {
@@ -23,14 +18,9 @@ class SitemapGeneratorController extends Controller
 
     public function store(SiteMapeRequest $request)
     {
-
-        $file_name = time().'.xml';
-        $path = public_path().'/sitemap/'.$file_name;
-        // $file = SitemapGenerator::create($request->url)->writeToFile($path);
-        $file = SitemapGenerator::create($request->url)->writeToFile($path);
-        session(['file'=>$file_name]);
-        Session::flash('file_get',$file_name);
-        Session::flash('success',trans('home.message_success'));
-        return redirect()->back();
+        $data = [];
+        $content =  view('dashboard.sitemap.show',compact('data'));
+        
+        return response($content,200)->header('Content-Type', 'text/xml');
 ;    }
 }

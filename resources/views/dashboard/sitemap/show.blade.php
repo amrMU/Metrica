@@ -1,11 +1,18 @@
 <?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    @foreach ($site_maps as $map)
-        <url>
-            <loc>URL : {{ $map->url }}</loc>
-            <lastmod>lastModificationDate: {{ $map->lastModificationDate->tz('UTC')->toAtomString() }}</lastmod>
-            <changefreq>changeFrequency: {{ @$map->changeFrequency }}</changefreq>
-            <priority>priority: {{ @$map->priority }}</priority>
-        </url>
-    @endforeach
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>{{URL::to('/')}}/</loc> 
+  <lastmod>2019-07-31T10:13:57+00:00</lastmod> 
+  <priority>1.00</priority> 
+</url>
+<url>
+  <loc>{{URL::to('/')}}/about_us</loc>
+  <lastmod>2019-07-31T10:13:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
 </urlset>

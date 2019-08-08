@@ -8,7 +8,7 @@
             <div class="page-header page-header-default">
                 <div class="page-header-content">
                     <div class="page-title">
-                        <h4><i class="icon-arrow-right6 position-left"></i> <span class="text-semibold">Home</span> - Dashboard</h4>
+                        <h4><i class="icon-arrow-right6 position-left"></i> <span class="text-semibold">@lang('home.home')</span> - @lang('home.dashboard')</h4>
                     </div>
 
                     <div class="heading-elements">
@@ -22,8 +22,8 @@
 
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
-                        <li><a href="index.html"><i class="icon-home2 position-left"></i> Home</a></li>
-                        <li class="active">Dashboard</li>
+                        <li><a href="index.html"><i class="icon-home2 position-left"></i> @lang('home.home')</a></li>
+                        <li class="active"> @lang('home.dashboard')</li>
                     </ul>
 
                     <ul class="breadcrumb-elements">
@@ -31,7 +31,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="icon-gear position-left"></i>
-                                Settings
+                                @lang('home.settings')
                                 <span class="caret"></span>
                             </a>
 
@@ -40,7 +40,7 @@
                                 <li><a href="#"><i class="icon-statistics"></i> Analytics</a></li>
                                 <li><a href="#"><i class="icon-accessibility"></i> Accessibility</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#"><i class="icon-gear"></i> All settings</a></li>
+                                <li><a href="{{ URL::to('admin/setting') }}"><i class="icon-gear"></i>@lang('home.general_settings')</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -1616,5 +1616,4 @@
 
         </div>
         <!-- /main content -->
-
 @stop
