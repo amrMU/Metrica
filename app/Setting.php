@@ -12,12 +12,12 @@ class Setting extends Model
     protected $fillable = [
             'title_ar',
             'title_en',
-            'description_ar',
-            'description_en',
+            'content_ar',
+            'content_en',
+            'logo',
             'meta_tags',
-            'lat_location',
-            'long_location',
             'extirnal_code',
+            'created_by'
     ];
 
 }

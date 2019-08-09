@@ -12,6 +12,7 @@ class SettingAddress extends Model
     protected $fillable = [
             'address_ar',
             'address_en',
+            'setting_id'
     ];
 
     

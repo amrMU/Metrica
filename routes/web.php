@@ -16,29 +16,6 @@ Route::get('/', function () {
 });
 
 
- Route::get('url', function () {
-     $url = 'https://bedayh4it.com';
-
-
-     function parseUrl($url) {
-         $r  = "^(?:(?P<scheme>\w+)://)?";
-         $r .= "(?:(?P<login>\w+):(?P<pass>\w+)@)?";
-         $r .= "(?P<host>(?:(?P<subdomain>[\w\.]+)\.)?" . "(?P<domain>\w+\.(?P<extension>\w+)))";
-         $r .= "(?::(?P<port>\d+))?";
-         $r .= "(?P<path>[\w/]*/(?P<file>\w+(?:\.\w+)?)?)?";
-         $r .= "(?:\?(?P<arg>[\w=&]+))?";
-         $r .= "(?:#(?P<anchor>\w+))?";
-         $r = "!$r!";                                                // Delimiters
-
-         preg_match ( $r, $url, $out );
-
-         return $out;
-     }
-     echo "<pre>";
-     print_r ( parseUrl ( $url ) );
-
- });
-
 
 
 Auth::routes();
@@ -46,6 +23,7 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
 	Route::group(['prefix' => 'admin'], function () {
         Route::get('setting','Admin\SettingController@create');
+        Route::post('setting','Admin\SettingController@store');
 		
 		Route::get('home','Admin\HomeController@index');
 		Route::get('reports_browsing','Admin\ReportsController@GetBrowsingInfo');

@@ -9,7 +9,7 @@ class SettingSocialMedia extends Model
 {
 	use SoftDeletes;
 	
-	protected $table = "setting_phones";
+	protected $table = "setting_social_media";
     protected $fillable = [
 	    'setting_id',
 	    'name_ar',

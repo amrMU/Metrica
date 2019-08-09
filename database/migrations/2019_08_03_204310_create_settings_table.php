@@ -20,6 +20,7 @@ class CreateSettingsTable extends Migration
             $table->string('title_en')->nullable();
             $table->longText('content_ar');
             $table->longText('content_en');
+            $table->string('logo')->nullable();
             $table->text('meta_tags');
             $table->longText('extirnal_code');
             $table->unsignedBigInteger('created_by');

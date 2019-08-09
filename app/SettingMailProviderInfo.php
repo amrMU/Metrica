@@ -16,6 +16,7 @@ class SettingMailProviderInfo extends Model
 	    'MAIL_HOST',
 	    'MAIL_USERNAME',
 	    'MAIL_PASSWORD',
+	    'MAIL_port',
     ];
 
 }

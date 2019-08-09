@@ -19,7 +19,8 @@ class CreateSettingMailProviderInfosTable extends Migration
             $table->unsignedInteger('setting_id');
             $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');            
             $table->string('MAIL_DRIVER')->default('SMTP');
-            $table->string('MAIL_HOST')->default('587');
+            $table->string('MAIL_HOST')->default('mail.amr.rmal.com.sa');
+            $table->string('MAIL_port')->default('587');
             $table->string('MAIL_USERNAME')->default('development@amr.rmal.com.sa');
             $table->string('MAIL_PASSWORD')->default(';Rvc?uyCR!NH');
             $table->softDeletes();

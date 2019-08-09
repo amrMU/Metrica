@@ -63,7 +63,15 @@
                         </div>
 
                         <div class="panel-body">
-                            <form class="form-horizontal form-validate-jquery" action="#">
+                            <form class="form-horizontal form-validate-jquery" method="POST" action="{{ URL::to('/admin/setting') }}">
+                                @if ($errors->any())
+                                @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger alert-dismissible">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>{{ $error }}
+                                </div>
+                                @endforeach
+                                @endif
+                                @csrf
                                 {{-- general Info --}}
                                 <fieldset class="content-group">
                                     <legend class="text-bold">@lang('home.basic_info')</legend>
@@ -72,7 +80,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.title_ar') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9">
-                                            <input type="text" name="title_ar" class="form-control" required="required" placeholder="@lang('home.placeholder_text')">
+                                            <input type="text" name="title_ar" class="form-control" placeholder="@lang('home.placeholder_text')" value="">
                                         </div>
                                     </div>
                                     <!-- /title ar input -->
@@ -81,7 +89,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.title_en') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9">
-                                            <input type="text" name="title_en" class="form-control" required="required" placeholder="@lang('home.placeholder_text')">
+                                            <input type="text" name="title_en" class="form-control"  placeholder="@lang('home.placeholder_text')" value="">
                                         </div>
                                     </div>
                                     <!-- /title ar input -->
@@ -91,8 +99,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.content_ar') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9">
-                                            
-                                            <textarea name="content_ar" class="form-control"  required="required" placeholder="@lang('home.placeholder_text')"></textarea>
+                                            <textarea name="content_ar" class="form-control"  placeholder="@lang('home.placeholder_text')"></textarea>
                                         </div>
                                     </div>
                                     <!-- /content ar input -->
@@ -100,7 +107,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.content_en') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9"> 
-                                            <textarea name="content_en" class="form-control"  required="required" placeholder="@lang('home.placeholder_text')"></textarea>
+                                            <textarea name="content_en" class="form-control"  placeholder="@lang('home.placeholder_text')"></textarea>
                                         </div>
                                     </div>
                                     <!-- /content en input -->                                    
@@ -108,7 +115,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.meta_tags') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9">
-                                            <input type="text" name="meta_tags" class="form-control tokenfield" required="required" value="@lang('home.placeholder_metatags')" >
+                                            <input type="text" name="meta_tags" class="form-control tokenfield" value="@lang('home.placeholder_metatags')" >
                                         </div>
                                     </div>
                                     <!-- /Meta Tags input -->
@@ -116,7 +123,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.extirnal_code') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9">
-                                            <textarea name="extirnal_code" class="form-control"  required="required" placeholder="@lang('home.placeholder_code')"></textarea>
+                                            <textarea name="extirnal_code" class="form-control"  placeholder="@lang('home.placeholder_code')"></textarea>
                                         </div>
                                     </div>
                                     <!--/extirnal code input -->
@@ -124,7 +131,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.logo') <span class="text-danger" title="@lang('home.required')"> *</span></label>
                                         <div class="col-lg-9">
-                                            <input type="file" name="logo" class="file-styled" required="required">
+                                            <input type="file" name="logo" class="file-styled" >
                                         </div>
                                     </div>
                                     <!-- /Logo uploader -->
@@ -132,7 +139,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.file_uploader')</label>
                                         <div class="col-lg-9">
-                                            <input type="file" name="file" class="file-styled" required="required" multiple>
+                                            <input type="file" name="file" class="file-styled"  multiple>
                                         </div>
                                     </div>
                                     <!-- /files uploader -->
@@ -145,7 +152,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2">Mail Driver </label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="mail_driver" class="form-control"  required="required" placeholder="Outgoing Server">
+                                                <input type="text" name="mail_driver" class="form-control" placeholder="Outgoing Server">
                                             </div>
                                         </div>
                                         <!-- /MAIL_DRIVER field -->
@@ -154,7 +161,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2">Mail Host</label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="mail_host" class="form-control"  required="required" placeholder="mail.example.com ">
+                                                <input type="text" name="mail_host" class="form-control" placeholder="mail.example.com ">
                                             </div>
                                         </div>
                                         <!-- /mail_host field -->
@@ -162,7 +169,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2"> Mail Username</label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="mail_username" class="form-control"  required="required" placeholder="info@example.com">
+                                                <input type="text" name="mail_username" class="form-control" placeholder="info@example.com">
                                             </div>
                                         </div>
                                         <!-- /mail_user_name field -->
@@ -171,7 +178,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2">Mail Password</label>
                                             <div class="col-lg-9">
-                                                <input type="password" name="mail_password" class="form-control"  required="required" placeholder="*******">
+                                                <input type="password" name="mail_password" class="form-control"  placeholder="*******">
                                             </div>
                                         </div>
                                         <!-- /mail_password field -->
@@ -180,7 +187,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2">Mail Port</label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="mail_port" class="form-control"  required="required" placeholder="Port">
+                                                <input type="text" name="mail_port" class="form-control" placeholder="Port">
                                             </div>
                                         </div>
                                         <!-- /Mail Port field -->
@@ -196,10 +203,10 @@
                                         <div class="form-group " >
                                             <label class="control-label col-lg-2">@lang('home.email') </label>
                                             <div class="col-lg-5">
-                                                <input type="email" name="email" class="form-control" id="email" required="required" placeholder="@lang('home.email')">
+                                                <input type="email" name="email[]" class="form-control" id="email" placeholder="@lang('home.email')">
                                             </div>
                                             <div class="col-lg-4">
-                                                <input type="text" name="department" class="form-control" id="text" required="required" placeholder="@lang('home.department')">
+                                                <input type="text" name="department[]" class="form-control" id="text" placeholder="@lang('home.department')">
                                             </div>
                                             <div class="col-2  m-10">
                                                <button class="btn btn-primary add_new_email"> + </button>
@@ -219,7 +226,7 @@
                                         <div class="form-group " >
                                             <label class="control-label col-lg-2">@lang('home.address') </label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="address[]" class="form-control" id="text" required="required" placeholder="@lang('home.address')">
+                                                <input type="text" name="address[]" class="form-control" id="text" placeholder="@lang('home.address')">
                                             </div>
                                             
                                             <div class="col-2  m-10">
@@ -241,7 +248,7 @@
                                         <div class="form-group " >
                                             <label class="control-label col-lg-2">@lang('home.phone') </label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="phone[]" class="form-control" id="phone" required="required" placeholder="@lang('home.phone')">
+                                                <input type="text" name="phone[]" class="form-control" id="phone"  placeholder="@lang('home.phone')">
                                             </div>
                                           
                                             <div class="col-2  m-10">
@@ -263,7 +270,7 @@
                                         <div class="form-group " >
                                             <label class="control-label col-lg-2">@lang('home.whatsapp') </label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="whatsapp[]" class="form-control" id="whatsapp" required="required" placeholder="@lang('home.whatsapp')">
+                                                <input type="text" name="whatsapp[]" class="form-control" id="whatsapp" placeholder="@lang('home.whatsapp')">
                                             </div>
                                           
                                             <div class="col-2  m-10">
@@ -287,16 +294,16 @@
                                                <a hreg="#" class="btn btn-primary add_new_social_media"> + </a>
                                             </div>
                                             <div class="col-lg-2">
-                                                <input type="text" name="title_ar[]" class="form-control" id="text" required="required" placeholder="@lang('home.name_ar')" multiple>
+                                                <input type="text" name="name_media_ar[]" class="form-control" id="title_ar" placeholder="@lang('home.name_ar')"  multiple>
                                             </div>
                                             <div class="col-lg-2">
-                                                <input type="text" name="title_en[]" class="form-control" id="text" required="required" placeholder="@lang('home.name_en')" multiple>
+                                                <input type="text" name="name_media_en[]" class="form-control" id="title_en" placeholder="@lang('home.name_en')"  multiple>
                                             </div>
                                              <div class="col-lg-2">
-                                                <input type="text" name="url[]" class="form-control" id="url" required="required" placeholder="@lang('home.url')" multiple>
+                                                <input type="text" name="url[]" class="form-control" id="url" placeholder="@lang('home.url')" multiple>
                                             </div>
                                             <div class="col-2">
-                                                <input type="file" name="social_logo[]" class="file-styled" required="required" multiple>
+                                                <input type="file" name="social_logo[]" class="file-styled" multiple>
                                             </div>
                                         </div>
                                         <!-- /social Media field -->
@@ -330,21 +337,21 @@
    var add_new_email = $(".add_new_email");
    $(add_new_email).click(function (e) {
     e.preventDefault();
-    $(wrap_emails).append('<div class="form-group" ><label class="control-label col-lg-2">@lang('home.email') </label><div class="col-lg-5"><input type="email" name="email" class="form-control" id="email" required="required" placeholder="@lang('home.email')"></div><div class="col-lg-4"><input type="text" name="department" class="form-control" id="text" required="required" placeholder="@lang('home.department')"></div><div class="col-2  m-10"><button class="remove_field btn btn-danger">-</button></div>'); 
+    $(wrap_emails).append('<div class="form-group" ><label class="control-label col-lg-2">@lang('home.email') </label><div class="col-lg-5"><input type="email" name="email[]" class="form-control" id="email" placeholder="@lang('home.email')"></div><div class="col-lg-4"><input type="text" name="department[]" class="form-control" id="text"  placeholder="@lang('home.department')"></div><div class="col-2  m-10"><button class="remove_field btn btn-danger">-</button></div>'); 
   });
     //start email generator
    var wrap_address = $(".wrap_address>#space_address");
    var add_new_address = $(".add_new_address");
    $(add_new_address).click(function (e) {
     e.preventDefault();
-    $(wrap_address).append('<div class="form-group" ><label class="control-label col-lg-2">@lang('home.address') </label><div class="col-lg-9"><input type="text" name="address[]" class="form-control" id="text" required="required" placeholder="@lang('home.address')"></div><div class="col-2  m-10"><button class="remove_field btn btn-danger">-</button></div></div>'); 
+    $(wrap_address).append('<div class="form-group" ><label class="control-label col-lg-2">@lang('home.address') </label><div class="col-lg-9"><input type="text" name="address[]" class="form-control" id="text" placeholder="@lang('home.address')"></div><div class="col-2  m-10"><button class="remove_field btn btn-danger">-</button></div></div>'); 
   });
    //start phones generator
    var wrap_phones = $(".wrap_phones>#space_phones");
    var add_new_phone = $(".add_new_phone");
    $(add_new_phone).click(function (e) {
     e.preventDefault();
-    $(wrap_phones).append('<div class="form-group" ><label class="control-label col-lg-2">@lang('home.phone') </label><div class="col-lg-9"><input type="text" name="phone[]" class="form-control" id="phone" required="required" placeholder="@lang('home.phone')"></div><div class="col-2  m-10"><button class="remove_field btn btn-danger">-</button></div></div>'); 
+    $(wrap_phones).append('<div class="form-group" ><label class="control-label col-lg-2">@lang('home.phone') </label><div class="col-lg-9"><input type="text" name="phone[]" class="form-control" id="phone" placeholder="@lang('home.phone')"></div><div class="col-2  m-10"><button class="remove_field btn btn-danger">-</button></div></div>'); 
   });
 
    //start whatsapp generator
@@ -352,14 +359,14 @@
    var add_new_whatsapp = $(".add_new_whatsapp");
    $(add_new_whatsapp).click(function (e) {
     e.preventDefault();
-    $(wrap_whatsapp).append('<div class="form-group" ><label class="control-label col-lg-2">@lang('home.whatsapp') </label><div class="col-lg-9"><input type="text" name="whatsapp[]" class="form-control" id="whatsapp" required="required" placeholder="@lang('home.whatsapp')"></div><div class="col-2  m-10"><button class="remove_field btn btn-danger">-</button></div></div>'); 
+    $(wrap_whatsapp).append('<div class="form-group" ><label class="control-label col-lg-2">@lang('home.whatsapp') </label><div class="col-lg-9"><input type="text" name="whatsapp[]" class="form-control" id="whatsapp" placeholder="@lang('home.whatsapp')"></div><div class="col-2  m-10"><button class="remove_field btn btn-danger">-</button></div></div>'); 
   });
    //start  social media generator
    var wrap_social_media = $(".wrap_social_media>#space_social_media");
    var add_new_social_media = $(".add_new_social_media");
    $(add_new_social_media).click(function (e) {
     e.preventDefault();
-    $(wrap_social_media).append('<div class="form-group" ><div class="col-lg-2"> <button class="remove_field btn btn-danger">-</button></div><div class="col-lg-2"><input type="text" name="name_ar[]" multiple class="form-control" id="text" required="required" placeholder="@lang('home.name_ar')"></div><div class="col-lg-2"><input type="text" name="name_en[]" multiple class="form-control" id="text" required="required" multiple placeholder="@lang('home.name_en')"></div><div class="col-lg-2"> <input type="text" name="url[]" multiple class="form-control" id="url" required="required" placeholder="@lang('home.url')"></div><div class="col-2"><input type="file" name="social_logo[]"  class="file-styled" required="required" multiple></div></div>'); 
+    $(wrap_social_media).append('<div class="form-group" ><div class="col-lg-2"> <button class="remove_field btn btn-danger">-</button></div><div class="col-lg-2"><input type="text" name="name_ar[]" multiple class="form-control" id="text" placeholder="@lang('home.name_ar')"></div><div class="col-lg-2"><input type="text" name="name_en[]" multiple class="form-control" id="text" multiple placeholder="@lang('home.name_en')"></div><div class="col-lg-2"> <input type="text" name="url[]" multiple class="form-control" id="url"  placeholder="@lang('home.url')"></div><div class="col-2"><input type="file" name="social_logo[]" class="file-styled"  multiple></div></div>'); 
   });
 
    $(document).on("click",".remove_field",function(){
