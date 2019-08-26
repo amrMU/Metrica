@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
-
+    <title>{{@$setting->title_ar}}</title>
+    @include('dashboard.layouts.meta_tags_social')
     <!-- Global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
     <link href="{{ asset('/') }}/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
@@ -35,7 +35,7 @@
     <!-- Main navbar -->
     <div class="navbar navbar-inverse bg-indigo">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.html"><img src="{{ asset('/') }}/assets/images/logo_light.png" alt=""></a>
+            <a class="navbar-brand" href="{{URL::to('/')}}"><img src="{{ asset('/') }}/assets/images/logo_light.png" alt=""></a>
 
             <ul class="nav navbar-nav pull-right visible-xs-block">
                 <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
@@ -44,7 +44,7 @@
 
         <div class="navbar-collapse collapse" id="navbar-mobile">
             <ul class="nav navbar-nav navbar-right">
-                <li>
+                <!-- <li>
                     <a href="#">
                         <i class="icon-display4"></i> <span class="visible-xs-inline-block position-right"> Go to website</span>
                     </a>
@@ -54,14 +54,14 @@
                     <a href="#">
                         <i class="icon-user-tie"></i> <span class="visible-xs-inline-block position-right"> Contact admin</span>
                     </a>
-                </li>
+                </li> -->
 
-                <li class="dropdown">
+                <!-- <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">
                         <i class="icon-cog3"></i>
                         <span class="visible-xs-inline-block position-right"> Options</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
