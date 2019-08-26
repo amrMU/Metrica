@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use App\Setting;
+use App;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,7 +17,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        App::booted(function()
+        {
+            if (\Schema::hasTable('settings')) {
+                $setting = Setting::first();
+                view()->share('setting', $setting);
+            }
+        });
     }
 
     /**

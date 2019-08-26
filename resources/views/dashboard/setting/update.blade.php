@@ -1,6 +1,5 @@
 @extends('dashboard.layouts.main')
 @section('content')
-    
         <!-- Main content -->
         <div class="content-wrapper">
                         <!-- Page header -->
@@ -12,10 +11,7 @@
 
                     <div class="heading-elements">
                         <div class="heading-btn-group">
-                            <a href="#" class="btn btn-link btn-float text-size-small has-text"><i class="icon-bars-alt text-primary"></i><span>Statistics</span></a>
-                            <a href="#" class="btn btn-link btn-float text-size-small has-text"><i class="icon-calculator text-primary"></i> <span>Invoices</span></a>
-                            <a href="#" class="btn btn-link btn-float text-size-small has-text"><i class="icon-calendar5 text-primary"></i> <span>Schedule</span></a>
-                        </div>
+                         </div>
                     </div>
                 </div>
 
@@ -26,7 +22,7 @@
                     </ul>
 
                     <ul class="breadcrumb-elements">
-                        <li><a href="#"><i class="icon-comment-discussion position-left"></i> Support</a></li>
+                        <!-- <li><a href="#"><i class="icon-comment-discussion position-left"></i> Support</a></li> -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="icon-gear position-left"></i>
@@ -35,10 +31,10 @@
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="#"><i class="icon-user-lock"></i> Account security</a></li>
+                                <!-- <li><a href="#"><i class="icon-user-lock"></i> Account security</a></li>
                                 <li><a href="#"><i class="icon-statistics"></i> Analytics</a></li>
                                 <li><a href="#"><i class="icon-accessibility"></i> Accessibility</a></li>
-                                <li class="divider"></li>
+                                <li class="divider"></li> -->
                               <li><a href="{{ URL::to('admin/setting') }}"><i class="icon-gear"></i>@lang('home.general_settings')</a></li>
                             </ul>
                         </li>
@@ -50,7 +46,7 @@
              <!-- Content area -->
             <div class="content">
                 <!-- Form validation -->
-                    <div class="panel panel-flat">
+                    <div class="panel panel-flat col-md-10">
                         <div class="panel-heading">
                             <h5 class="panel-title">@lang('home.general_settings')</h5>
                             <div class="heading-elements">
@@ -63,13 +59,18 @@
                         </div>
 
                         <div class="panel-body">
-                            <form class="form-horizontal form-validate-jquery" method="POST" action="{{ URL::to('/admin/setting') }}">
+                            <form class="form-horizontal form-validate-jquery" method="POST" action="{{ URL::to('/admin/setting') }}" enctype='multipart/form-data'>
                                 @if ($errors->any())
                                 @foreach ($errors->all() as $error)
                                 <div class="alert alert-danger alert-dismissible">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>{{ $error }}
                                 </div>
                                 @endforeach
+                                @endif
+                                @if(Session::has('success'))
+                                <div class="alert alert-success alert-dismissible">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>{{ Session::get('success') }}
+                                </div>
                                 @endif
                                 @csrf
                                 {{-- general Info --}}
@@ -80,7 +81,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.title_ar') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9">
-                                            <input type="text" name="title_ar" class="form-control" placeholder="@lang('home.placeholder_text')" value="">
+                                            <input type="text" name="title_ar" class="form-control" placeholder="@lang('home.placeholder_text')" value="{{@$info->title_ar}}">
                                         </div>
                                     </div>
                                     <!-- /title ar input -->
@@ -89,7 +90,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.title_en') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9">
-                                            <input type="text" name="title_en" class="form-control"  placeholder="@lang('home.placeholder_text')" value="">
+                                            <input type="text" name="title_en" class="form-control"  placeholder="@lang('home.placeholder_text')" value="{{@$info->title_en}}">
                                         </div>
                                     </div>
                                     <!-- /title ar input -->
@@ -99,7 +100,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.content_ar') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9">
-                                            <textarea name="content_ar" class="form-control"  placeholder="@lang('home.placeholder_text')"></textarea>
+                                            <textarea name="content_ar" class="form-control"  placeholder="@lang('home.placeholder_text')">{{@$info->content_ar}}</textarea>
                                         </div>
                                     </div>
                                     <!-- /content ar input -->
@@ -107,7 +108,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.content_en') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9"> 
-                                            <textarea name="content_en" class="form-control"  placeholder="@lang('home.placeholder_text')"></textarea>
+                                            <textarea name="content_en" class="form-control"  placeholder="@lang('home.placeholder_text')">{{@$info->content_en}}</textarea>
                                         </div>
                                     </div>
                                     <!-- /content en input -->                                    
@@ -115,7 +116,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.meta_tags') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9">
-                                            <input type="text" name="meta_tags" class="form-control tokenfield" value="@lang('home.placeholder_metatags')" >
+                                            <input type="text" name="meta_tags" class="form-control tokenfield" value="@lang('home.placeholder_metatags')" value="{{@$info->meta_tags}}">
                                         </div>
                                     </div>
                                     <!-- /Meta Tags input -->
@@ -123,7 +124,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.extirnal_code') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9">
-                                            <textarea name="extirnal_code" class="form-control"  placeholder="@lang('home.placeholder_code')"></textarea>
+                                            <textarea name="extirnal_code" class="form-control"  placeholder="@lang('home.placeholder_code')">{!! @$info->extirnal_code !!}</textarea>
                                         </div>
                                     </div>
                                     <!--/extirnal code input -->
@@ -139,7 +140,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.file_uploader')</label>
                                         <div class="col-lg-9">
-                                            <input type="file" name="file" class="file-styled"  multiple>
+                                            <input type="file" name="external_resources[]" class="file-styled"  multiple>
                                         </div>
                                     </div>
                                     <!-- /files uploader -->
@@ -152,7 +153,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2">Mail Driver </label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="mail_driver" class="form-control" placeholder="Outgoing Server">
+                                                <input type="text" name="mail_driver" class="form-control" placeholder="Outgoing Server" value="{{$info->mail_provider_info->MAIL_DRIVER}}" >
                                             </div>
                                         </div>
                                         <!-- /MAIL_DRIVER field -->
@@ -161,7 +162,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2">Mail Host</label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="mail_host" class="form-control" placeholder="mail.example.com ">
+                                                <input type="text" name="mail_host" class="form-control" placeholder="mail.example.com " value="{{@$info->mail_provider_info->MAIL_HOST}}">
                                             </div>
                                         </div>
                                         <!-- /mail_host field -->
@@ -169,7 +170,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2"> Mail Username</label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="mail_username" class="form-control" placeholder="info@example.com">
+                                                <input type="text" name="mail_username" class="form-control" placeholder="info@example.com" value="{{$info->mail_provider_info->MAIL_HOST}}" >
                                             </div>
                                         </div>
                                         <!-- /mail_user_name field -->
@@ -178,7 +179,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2">Mail Password</label>
                                             <div class="col-lg-9">
-                                                <input type="password" name="mail_password" class="form-control"  placeholder="*******">
+                                                <input type="password" name="mail_password" class="form-control"  placeholder="*******" value="{{$info->mail_provider_info->MAIL_PASSWORD}}" >
                                             </div>
                                         </div>
                                         <!-- /mail_password field -->
@@ -187,7 +188,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2">Mail Port</label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="mail_port" class="form-control" placeholder="Port">
+                                                <input type="text" name="mail_port" class="form-control" placeholder="Port" value="{{$info->mail_provider_info->MAIL_port}}">
                                             </div>
                                         </div>
                                         <!-- /Mail Port field -->
@@ -213,7 +214,21 @@
                                             </div>
                                         </div>
                                         <!-- /email field -->
-                                        <div id="space_emails"></div>
+                                        <div id="space_emails">
+                                        @foreach($info->emails as $email)
+                                        <div class="form-group " >
+                                            <label class="control-label col-lg-2">@lang('home.email') </label>
+                                            <div class="col-lg-5">
+                                                <input type="email" name="email[]" class="form-control" id="email" placeholder="@lang('home.email')" value="{{@$email->email}}">
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <input type="text" name="department[]" class="form-control" id="text" placeholder="@lang('home.department')" value="{{@$email->department}}">
+                                            </div>
+                                            <div class="col-2  m-10">
+                                               <button class="remove_field btn btn-danger">-</button>
+                                            </div>
+                                        </div>
+                                        @endforeach
                                     </div>
                                 </fieldset>
                                 {{-- Email --}}
@@ -223,7 +238,7 @@
                                     <legend class="text-bold">@lang('home.company_address')</legend>
                                     <!-- address field -->
                                     <div class="wrap_address">
-                                        <div class="form-group " >
+                                        <div class="form-group" >
                                             <label class="control-label col-lg-2">@lang('home.address') </label>
                                             <div class="col-lg-9">
                                                 <input type="text" name="address[]" class="form-control" id="text" placeholder="@lang('home.address')">
@@ -235,7 +250,18 @@
                                         </div>
                                         <!-- /address field -->
                                         <div id="space_address">
+                                        @foreach($info->address as $address)
+                                        <div class="form-group" >
+                                            <label class="control-label col-lg-2">@lang('home.address') </label>
+                                            <div class="col-lg-9">
+                                                <input type="text" name="address[]" class="form-control" id="text" placeholder="@lang('home.address')" value="{{@$address->address_ar}}">
+                                            </div>
                                             
+                                            <div class="col-2  m-10">
+                                            <button class="remove_field btn btn-danger">-</button>
+                                            </div>
+                                        </div>
+                                        @endforeach                                            
                                         </div>
                                     </div>
                                 </fieldset>
@@ -248,7 +274,7 @@
                                         <div class="form-group " >
                                             <label class="control-label col-lg-2">@lang('home.phone') </label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="phone[]" class="form-control" id="phone"  placeholder="@lang('home.phone')">
+                                                <input type="text" name="phone[]" class="form-control" id="phone"  placeholder="@lang('home.phone')" >
                                             </div>
                                           
                                             <div class="col-2  m-10">
@@ -257,7 +283,17 @@
                                         </div>
                                         <!--/ phone field -->
                                         <div id="space_phones">
-                                            
+                                        @foreach($info->phones as $phone)
+                                        <div class="form-group " >
+                                            <label class="control-label col-lg-2">@lang('home.phone') </label>
+                                            <div class="col-lg-9">
+                                                <input type="text" name="phone[]" class="form-control" id="phone"  placeholder="@lang('home.phone')" value="{{@$phone->phone}}">
+                                            </div>
+                                            <div class="col-2  m-10">
+                                            <button class="remove_field btn btn-danger">-</button>
+                                            </div>
+                                        </div>
+                                        @endforeach                                            
                                         </div>
                                     </div>
                                 </fieldset>
@@ -279,7 +315,18 @@
                                         </div>
                                         <!--/ whatsapp field -->
                                         <div id="space_whatsapp">
-                                            
+                                        @foreach($info->whatsapp as $whatsapp)
+                                        <div class="form-group " >
+                                            <label class="control-label col-lg-2">@lang('home.whatsapp') </label>
+                                            <div class="col-lg-9">
+                                                <input type="text" name="whatsapp[]" class="form-control" id="whatsapp" placeholder="@lang('home.whatsapp')" value="{{@$whatsapp->whatsapp}}">
+                                            </div>
+                                          
+                                            <div class="col-2  m-10">                                        
+                                            <button class="remove_field btn btn-danger">-</button>
+                                            </div>
+                                        </div>
+                                        @endforeach                                                                                        
                                         </div>
                                     </div>
                                 </fieldset>
@@ -308,7 +355,27 @@
                                         </div>
                                         <!-- /social Media field -->
                                         <div id="space_social_media">
-                                            
+                                        @foreach($info->social_media_link as $link)
+
+                                        <div class="form-group" >
+                                            <div class="col-lg-2">
+                                            <button class="remove_field btn btn-danger">-</button>
+                                            </div>
+                                            <div class="col-lg-2"> 
+                                                <input type="text" name="name_media_ar[]" class="form-control" id="title_ar" placeholder="@lang('home.name_ar')"  multiple  value="{{@$link->name_ar}}">
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <input type="text" name="name_media_en[]" class="form-control" id="title_en" placeholder="@lang('home.name_en')"  multiple value="{{@$link->name_en}}" >
+                                            </div>
+                                             <div class="col-lg-2">
+                                                <input type="text" name="url[]" class="form-control" id="url" placeholder="@lang('home.url')" multiple value="{{@$link->url}}" >
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="file" name="social_logo[]" class="file-styled" multiple>
+                                            </div>
+                                        </div>
+                                        @endforeach                                                                                        
+
                                         </div>
                                     </div>
                                 </fieldset>
@@ -322,7 +389,19 @@
                         </div>
                     </div>
                     <!-- /form validation -->
-
+                    <div class="col-md-2">
+                    <img src="{{url('/uploads/images/logos'.'/'.str_replace( ' ','_',$info->title_en).'/org').'/'.@$info->logo}}" class="img-responsive" style="max-width:100%" >
+                    </div>
+                    @foreach($info->external_resources as $file)
+                    <div class="col-md-2">
+                    <a href="{{@$file->file}}" target="_blank">
+                        <img src="{{asset('/img/code.svg')}}" style="height: 70px; margin: 0 30px;" class="img-responsive">
+                    </a>
+                    <small class="text-center">
+                        @include('dashboard.setting.external_delete_model')
+                    </small>
+                    </div>
+                    @endforeach
             </div>
              <!-- Content area -->
 

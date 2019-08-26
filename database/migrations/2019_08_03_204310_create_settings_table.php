@@ -21,7 +21,7 @@ class CreateSettingsTable extends Migration
             $table->longText('content_ar');
             $table->longText('content_en');
             $table->string('logo')->nullable();
-            $table->text('meta_tags');
+            $table->text('meta_tags')->nullable();
             $table->longText('extirnal_code');
             $table->unsignedBigInteger('created_by');
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');

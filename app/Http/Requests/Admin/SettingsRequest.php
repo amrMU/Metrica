@@ -37,8 +37,8 @@ class SettingsRequest extends FormRequest
                 'content_ar'=>'required',
                 'content_ar'=>'required',
                 // 'logo'=>'required|mimes:jpeg,bmp,png,jpg',
-                'meta_tags'=>'required',
-                'extirnal_code'=>'required',
+                // 'meta_tags'=>'required',
+                // 'extirnal_code'=>'required',
                 );
            }
            case 'PUT':
@@ -49,8 +49,8 @@ class SettingsRequest extends FormRequest
                 'content_ar'=>'required',
                 'content_en'=>'required',
                 // 'logo'=>'required|mimes:jpeg,bmp,png,jpg',
-                'meta_tags'=>'required',
-                'extirnal_code'=>'required',
+                // 'meta_tags'=>'required',
+                // 'extirnal_code'=>'required',
                 );
            }
            case 'PATCH':

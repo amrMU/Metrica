@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
+    <title>{{@$setting->title_ar}}</title>
 
-  
+  @include('dashboard.layouts.meta_tags_social')
     <!-- Global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
     <link href="{{ asset('/') }}assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
@@ -24,6 +24,8 @@
     <!-- /core JS files -->
 
     <!-- Theme JS files -->
+    <script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/tables/datatables/datatables.min.js"></script>
+	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/tables/datatables/extensions/responsive.min.js"></script>
     <script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/visualization/d3/d3.min.js"></script>
     <script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
     <script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/forms/styling/switchery.min.js"></script>
@@ -49,6 +51,7 @@
     <script type="text/javascript" src="{{ asset('/') }}assets/js/pages/form_validation.js"></script>
     <script type="text/javascript" src="{{ asset('/') }}assets/js/pages/form_tags_input.js"></script>
 
+	<script type="text/javascript" src="{{ asset('/') }}assets/js/pages/datatables_responsive.js"></script>
     <script type="text/javascript" src="{{ asset('/') }}assets/js/pages/dashboard.js"></script>
 
     <script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/ui/ripple.min.js"></script>
@@ -61,8 +64,12 @@
 <!-- Main navbar -->
 <div class="navbar navbar-inverse bg-indigo">
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.html"><img src="{{ asset('/') }}assets/images/logo_light.png" alt=""></a>
+        @if(isset($setting))
+        <a class="navbar-brand" href="{{URL::to('/admin/home')}}"><img src="{{url('/uploads/images/logos'.'/'.str_replace( ' ','_',$setting->title_en).'/org').'/'.@$setting->logo}}"  class="img-responsive"></a>
+        @else
+        <a class="navbar-brand" href="{{URL::to('/admin/home')}}"><img src="{{ asset('/') }}assets/images/logo_light.png" class="img-responsive"></a>
 
+        @endif
         <ul class="nav navbar-nav visible-xs-block">
             <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
             <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
@@ -74,11 +81,11 @@
             <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a></li>
 
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="icon-puzzle3"></i>
                     <span class="visible-xs-inline-block position-right">Git updates</span>
                     <span class="status-mark border-orange-400"></span>
-                </a>
+                </a> -->
 
                 <div class="dropdown-menu dropdown-content">
                     <div class="dropdown-content-heading">
@@ -153,16 +160,15 @@
         </ul>
 
         <div class="navbar-right">
-            <p class="navbar-text">Morning, Victoria!</p>
+         
             <p class="navbar-text"><span class="label bg-success-400">Online</span></p>
-
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="icon-bell2"></i>
                         <span class="visible-xs-inline-block position-right">Activity</span>
                         <span class="status-mark border-orange-400"></span>
-                    </a>
+                    </a> -->
 
                     <div class="dropdown-menu dropdown-content">
                         <div class="dropdown-content-heading">
@@ -243,11 +249,11 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="icon-bubble8"></i>
                         <span class="visible-xs-inline-block position-right">Messages</span>
                         <span class="status-mark border-orange-400"></span>
-                    </a>
+                    </a> -->
 
                     <div class="dropdown-menu dropdown-content width-350">
                         <div class="dropdown-content-heading">
@@ -353,24 +359,22 @@
                 <div class="sidebar-user-material">
                     <div class="category-content">
                         <div class="sidebar-user-material-content">
-                            <a href="#"><img src="{{ asset('/') }}assets/images/placeholder.jpg" class="img-circle img-responsive" alt=""></a>
-                            <h6>Victoria Baker</h6>
-                            <span class="text-size-small">Santa Ana, CA</span>
+                            <a href="#"><img src="{{ asset('/').Auth::user()->image }}" class="img-circle img-responsive" alt=""></a>
+                            <h6>{{@Auth::user()->fname.' '.@Auth::user()->lname}}</h6>
+                            <span class="text-size-small">{{@Auth::user()->address}}</span>
                         </div>
 
                         <div class="sidebar-user-material-menu">
-                            <a href="#user-nav" data-toggle="collapse"><span>My account</span> <i class="caret"></i></a>
+                            <a href="#user-nav" data-toggle="collapse"><span>@lang('home.myaccount')</span> <i class="caret"></i></a>
                         </div>
                     </div>
 
                     <div class="navigation-wrapper collapse" id="user-nav">
                         <ul class="navigation">
-                            <li><a href="#"><i class="icon-user-plus"></i> <span>My profile</span></a></li>
-                            <li><a href="#"><i class="icon-coins"></i> <span>My balance</span></a></li>
-                            <li><a href="#"><i class="icon-comment-discussion"></i> <span><span class="badge bg-teal-400 pull-right">58</span> Messages</span></a></li>
-                            <li class="divider"></li>
-                            <li><a href="#"><i class="icon-cog5"></i> <span>@lang('home.general_settings')</span></a></li>
-                            <li><a href="{{ URL::to('/logout') }}"><i class="icon-switch2"></i> <span>Logout</span></a></li>
+                            <!-- <li><a href="#"><i class="icon-user-plus"></i> <span>@lang('home.profile_setting')</span></a></li> -->
+                            <!-- <li class="divider"></li> -->
+                            <li><a href="{{ URL::to('admin/setting') }}"><i class="icon-cog5"></i> <span>@lang('home.general_settings')</span></a></li>
+                            <li><a href="{{ URL::to('/logout') }}"><i class="icon-switch2"></i> <span>@lang('home.logout')</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -384,7 +388,7 @@
 
                             <!-- Main -->
                             <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
-                            <li class="active"><a href="{{ URL::to('admin/home') }}"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
+                            <li class="active"><a href="{{ URL::to('admin/home') }}"><i class="icon-home4"></i> <span>@lang('home.dashboard')</span></a></li>
                             <li>
                                 <a href="{{ URL::to('admin/sitemap/create') }}"><i class="icon-stack2"></i> <span>sitemap</span></a>
                                

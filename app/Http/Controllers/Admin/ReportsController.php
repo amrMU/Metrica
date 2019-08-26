@@ -4,20 +4,36 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Report;
-
+use App\Report,App\User;
+use Session;
 class ReportsController extends Controller
 {
-    public function __construct(Report $report)
+    public function __construct(Report $report,User $user)
 	{
 		$this->report = $report;
+		$this->user = $user;
+	
+
 	}	
 
 	public $view = 'dashboard';
 
 	public function GetBrowsingInfo()
 	{
-		return view($this->view.'.reports.show');
+		$reports = $this->user->whereHas('reports')->with('reports')->take('10')->get();//user has reports to get user browsing info
+		return view($this->view.'.reports.show',compact('reports'));
 	}
 
+	public function getUserBrowseInfo($user_id)
+	{
+		$reports = $this->report->where('user_id',$user_id)->orderby('created_at','DESC')->paginate(30);
+		return view($this->view.'.reports.show_user_reports',compact('reports'));		
+	}
+
+	public function delete_reports($report_id)
+	{
+		$this->report->destroy($report_id);
+        Session::flash('success',trans('home.message_success'));
+		return redirect()->back();
+	}
 }
