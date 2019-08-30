@@ -10,6 +10,9 @@
 		'general_settings'=>'General Settings',
 		'basic_info'=>'Basic Information',
 
+		'name'=>'Name',
+		'address'=>'address',
+		'send'=>'Send',
 		'title_ar'=>'Title Ar',
 		'title_en'=>'Title EN',
 		'name_ar'=>'Name Ar',
@@ -48,7 +51,37 @@
 		'location'=>'Location',
 		'user_full_reports'=>'See Full User Reports',
 		'browser'=>'browser',
-		
+		'success'=>'Success!',
+		'select_one'=>'Select One',
+		'city'=>'City',
+		'status'=>'Status',
+		'type'=>'Type',
+		'reply'=>'Reply',
+
+		//comming soon
+		'we_are_coming_soon'=>'We are coming soon',
+		'welcome_to_our_community'=>'Welcome to our community ',
+		'days'=>'Days',
+		'hours'=>'Hours',
+		'minutes'=>'Minutes',
+		'seconds'=>'Seconds',
+		'our_Website_is_coming_soon'=>'Our Website is coming soon',
+		'Please_register_here_to_be_updated_when_ready'=>"Please register here to be updated when it's ready",
+		'Register_for_user'=>'Register as user',
+		'Register_for_company'=>'Register as company',
+		'company'=>'Company',
+		'We_will_contact_you_once_we_launch'=>'We will contact you once we launch',
+		//comming soon
+		//comming soon dashboard
+		'wating_lists'=>'Users wating Lists ',
+		//comming soon dashboard
+		'log_case'=>'Log Case',
+
+		'search'=>'Search',
+		'key_search_wating_list'=>'search key, name, email, phone, type, city',
+
+		'header_delete_model'=>'Are you sure you want to complete this action?',
+		'body_delete_model'=>'This will be removed from your database.',
 
 		'smtp_builder'=>'Smtp Builder',
 		'mail_driver'=>'Mail Driver',

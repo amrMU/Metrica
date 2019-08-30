@@ -1,7 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+/*
+*********************************
+* Name: Amr Muhamed             *
+* Email: amrmuhamed9@gmail.com  *
+* Phone: +201061637022          *
+* Copywrits @amrMU Githup       *
+* *******************************
+*/
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\SiteMapeRequest;

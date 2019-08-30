@@ -18,7 +18,7 @@
 
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
-                        <li><a href="index.html"><i class="icon-home2 position-left"></i> @lang('home.home')</a></li>
+                        <li><a href="{{URL::to('ar/admin/home')}}"><i class="icon-home2 position-left"></i> @lang('home.home')</a></li>
                         <li class="active">@lang('home.full_report')</li>
                     </ul>
 
@@ -32,7 +32,7 @@
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a href="{{ URL::to('admin/setting') }}"><i class="icon-gear"></i>@lang('home.general_settings')</a></li>
+                            <li><a href="{{ URL::to('ar/admin/setting') }}"><i class="icon-gear"></i>@lang('home.general_settings')</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -47,7 +47,7 @@
                     <div class="panel panel-flat ">
                                            <!-- table reports -->
                    <div class="table-responsive">
-                                <table class="table text-nowrap" id="table">
+                                <table class="table text-nowrap  datatable-basic"  id="table">
                                     <thead>
                                         <tr>
                                         <th>@lang('home.user')</th>                                        
@@ -87,7 +87,7 @@
                                        <td><h6 class="text-semibold">{{ @$user->last_report()->browser }}</h6></td>
                                        
                                        <td>
-                                            <a href="{{URL::to('/admin/reports_browsing/').'/'.$user->id.'/u/'.@$user->fname}}" class="btn btn-primary"> <li class="icon-quill4"></li></a>
+                                            <a href="{{URL::to('ar/admin/reports_browsing/').'/'.$user->id.'/u/'.@$user->fname}}" class="btn btn-primary"> <li class="icon-quill4"></li></a>
                                         </td>                                
                                     </tr>
                                     @endforeach

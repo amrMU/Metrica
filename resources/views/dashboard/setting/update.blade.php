@@ -17,7 +17,7 @@
 
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
-                        <li><a href="{{ URL::to('/admin/home') }}"><i class="icon-home2 position-left"></i> @lang('home.home')</a></li>
+                        <li><a href="{{ URL::to('ar/admin/home') }}"><i class="icon-home2 position-left"></i> @lang('home.home')</a></li>
                         <li class="active">@lang('home.general_settings')</li>
                     </ul>
 
@@ -35,7 +35,7 @@
                                 <li><a href="#"><i class="icon-statistics"></i> Analytics</a></li>
                                 <li><a href="#"><i class="icon-accessibility"></i> Accessibility</a></li>
                                 <li class="divider"></li> -->
-                              <li><a href="{{ URL::to('admin/setting') }}"><i class="icon-gear"></i>@lang('home.general_settings')</a></li>
+                              <li><a href="{{ URL::to('ar/admin/setting') }}"><i class="icon-gear"></i>@lang('home.general_settings')</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -122,7 +122,7 @@
                                     <!-- /Meta Tags input -->
                                     <!-- extirnal code input -->
                                     <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.extirnal_code') <span class="text-danger" title="@lang('home.required')">*</span></label>
+                                        <label class="control-label col-lg-3">@lang('home.extirnal_code') </label>
                                         <div class="col-lg-9">
                                             <textarea name="extirnal_code" class="form-control"  placeholder="@lang('home.placeholder_code')">{!! @$info->extirnal_code !!}</textarea>
                                         </div>
@@ -137,12 +137,12 @@
                                     </div>
                                     <!-- /Logo uploader -->
                                    <!-- files uploader -->
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.file_uploader')</label>
                                         <div class="col-lg-9">
                                             <input type="file" name="external_resources[]" class="file-styled"  multiple>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- /files uploader -->
                                 </fieldset>
                                 {{-- general Info --}}
@@ -153,7 +153,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2">Mail Driver </label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="mail_driver" class="form-control" placeholder="Outgoing Server" value="{{$info->mail_provider_info->MAIL_DRIVER}}" >
+                                                <input type="text" name="mail_driver" class="form-control" placeholder="Outgoing Server" value="{{@$info->mail_provider_info->MAIL_DRIVER}}" >
                                             </div>
                                         </div>
                                         <!-- /MAIL_DRIVER field -->
@@ -170,7 +170,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2"> Mail Username</label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="mail_username" class="form-control" placeholder="info@example.com" value="{{$info->mail_provider_info->MAIL_HOST}}" >
+                                                <input type="text" name="mail_username" class="form-control" placeholder="info@example.com" value="{{@$info->mail_provider_info->MAIL_HOST}}" >
                                             </div>
                                         </div>
                                         <!-- /mail_user_name field -->
@@ -179,7 +179,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2">Mail Password</label>
                                             <div class="col-lg-9">
-                                                <input type="password" name="mail_password" class="form-control"  placeholder="*******" value="{{$info->mail_provider_info->MAIL_PASSWORD}}" >
+                                                <input type="password" name="mail_password" class="form-control"  placeholder="*******" value="{{@$info->mail_provider_info->MAIL_PASSWORD}}" >
                                             </div>
                                         </div>
                                         <!-- /mail_password field -->
@@ -188,7 +188,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2">Mail Port</label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="mail_port" class="form-control" placeholder="Port" value="{{$info->mail_provider_info->MAIL_port}}">
+                                                <input type="text" name="mail_port" class="form-control" placeholder="Port" value="{{@$info->mail_provider_info->MAIL_port}}">
                                             </div>
                                         </div>
                                         <!-- /Mail Port field -->
@@ -215,6 +215,7 @@
                                         </div>
                                         <!-- /email field -->
                                         <div id="space_emails">
+                                        @if(isset($info))
                                         @foreach($info->emails as $email)
                                         <div class="form-group " >
                                             <label class="control-label col-lg-2">@lang('home.email') </label>
@@ -229,6 +230,7 @@
                                             </div>
                                         </div>
                                         @endforeach
+                                        @endif
                                     </div>
                                 </fieldset>
                                 {{-- Email --}}
@@ -250,6 +252,7 @@
                                         </div>
                                         <!-- /address field -->
                                         <div id="space_address">
+                                        @if(isset($info))
                                         @foreach($info->address as $address)
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2">@lang('home.address') </label>
@@ -261,7 +264,8 @@
                                             <button class="remove_field btn btn-danger">-</button>
                                             </div>
                                         </div>
-                                        @endforeach                                            
+                                        @endforeach    
+                                        @endif                                        
                                         </div>
                                     </div>
                                 </fieldset>
@@ -283,6 +287,7 @@
                                         </div>
                                         <!--/ phone field -->
                                         <div id="space_phones">
+                                        @if(isset($info))
                                         @foreach($info->phones as $phone)
                                         <div class="form-group " >
                                             <label class="control-label col-lg-2">@lang('home.phone') </label>
@@ -293,7 +298,8 @@
                                             <button class="remove_field btn btn-danger">-</button>
                                             </div>
                                         </div>
-                                        @endforeach                                            
+                                        @endforeach   
+                                        @endif                                         
                                         </div>
                                     </div>
                                 </fieldset>
@@ -315,6 +321,7 @@
                                         </div>
                                         <!--/ whatsapp field -->
                                         <div id="space_whatsapp">
+                                        @if(isset($info))
                                         @foreach($info->whatsapp as $whatsapp)
                                         <div class="form-group " >
                                             <label class="control-label col-lg-2">@lang('home.whatsapp') </label>
@@ -326,7 +333,8 @@
                                             <button class="remove_field btn btn-danger">-</button>
                                             </div>
                                         </div>
-                                        @endforeach                                                                                        
+                                        @endforeach   
+                                        @endif                                                                                     
                                         </div>
                                     </div>
                                 </fieldset>
@@ -355,8 +363,8 @@
                                         </div>
                                         <!-- /social Media field -->
                                         <div id="space_social_media">
+                                        @if(isset($info))
                                         @foreach($info->social_media_link as $link)
-
                                         <div class="form-group" >
                                             <div class="col-lg-2">
                                             <button class="remove_field btn btn-danger">-</button>
@@ -375,7 +383,7 @@
                                             </div>
                                         </div>
                                         @endforeach                                                                                        
-
+                                        @endif
                                         </div>
                                     </div>
                                 </fieldset>
@@ -390,8 +398,11 @@
                     </div>
                     <!-- /form validation -->
                     <div class="col-md-2">
-                    <img src="{{url('/uploads/images/logos'.'/'.str_replace( ' ','_',$info->title_en).'/org').'/'.@$info->logo}}" class="img-responsive" style="max-width:100%" >
+                    @if(isset($setting))
+                    <img src="{{url('/').@$info->logo}}" class="img-responsive" style="max-width:100%" >
+                    @endif
                     </div>
+                    @if(isset($info))                    
                     @foreach($info->external_resources as $file)
                     <div class="col-md-2">
                     <a href="{{@$file->file}}" target="_blank">
@@ -402,6 +413,7 @@
                     </small>
                     </div>
                     @endforeach
+                    @endif
             </div>
              <!-- Content area -->
 

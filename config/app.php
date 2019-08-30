@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    // 'url' => @url('/'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -171,12 +171,16 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
+
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
         //laravel debuger
         Barryvdh\Debugbar\ServiceProvider::class,
+
+        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
+
     ],
 
     /*
@@ -231,6 +235,9 @@ return [
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
         //laravel debuger
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
+
+
     ],
 
 ];

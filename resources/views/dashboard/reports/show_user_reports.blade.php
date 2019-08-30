@@ -18,7 +18,7 @@
 
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
-                        <li><a href="{{ URL::to('admin/home') }}"><i class="icon-home2 position-left"></i> @lang('home.home')</a></li>
+                        <li><a href="{{ URL::to('ar/admin/home') }}"><i class="icon-home2 position-left"></i> @lang('home.home')</a></li>
                         <li class="active">@lang('home.full_report')</li>
                     </ul>
 
@@ -32,7 +32,7 @@
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a href="{{ URL::to('admin/setting') }}"><i class="icon-gear"></i>@lang('home.general_settings')</a></li>
+                            <li><a href="{{ URL::to('ar/admin/setting') }}"><i class="icon-gear"></i>@lang('home.general_settings')</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -57,6 +57,7 @@
                                         <tr>
                                         <th>@lang('home.user')</th>                                        
                                         <th class="col-md-2">@lang('home.action')</th>
+                                        <th class="col-md-2">@lang('home.process')</th>
                                         <th class="col-md-2">@lang('home.since')</th>
                                         <th class="col-md-2">@lang('home.ip')</th>
                                         <th class="col-md-2">@lang('home.location')</th>
@@ -70,7 +71,7 @@
                                     <tr>
                                     <td>
                                         <div class="media-left">
-                                            <div class=""><a href="#" class="text-default text-semibold">{{ @$user->fname.' '.$user->lname }}</a></div>
+                                            <div class=""><a href="#" class="text-default text-semibold">{{ @$user->user->fname.' '.$user->user->lname }}</a></div>
                                             @if($user->key == 'dashboard_user_login')
                                                 <div class="text-muted text-size-small" title="online">
                                                     <span class="status-mark border-blue position-left"></span>
@@ -85,13 +86,14 @@
                                             <a href="#"><img src="{{ asset('/') }}{{ @$user->image }}" class="img-circle img-xs" alt=""></a>
                                         </div>
                                        </td>
+                                       <td>@include('dashboard.reports.user_reports_model')</td>
                                        <td><span class="label bg-blue">{{ @$user->text }}</span></td>
                                        <td><span class="text-muted">{{@Carbon\Carbon::parse($user->created_at)->diffForHumans()}}</span></td>
                                        <td><span class="text-success-600"><i class="icon-stats-growth2 position-left"></i>{{ @$user->ip }}</span></td>
                                        <td><h6 class="text-semibold">{{ @$user->location }}</h6></td>
                                        <td><h6 class="text-semibold">{{ @$user->browser }}</h6></td>
                                         <td>
-                                            <a class="btn btn-danger btn-sm" href="{{URL::to('/')}}/admin/reports_browsing/{{@$user->id}}/delete"><li class="icon-trash"></li></a>
+                                            <a class="btn btn-danger btn-sm" href="{{URL::to('ar/')}}/admin/reports_browsing/{{@$user->id}}/delete"><li class="icon-trash"></li></a>
                                         </td>                            
                                     </tr>
                                     @endforeach

@@ -1,0 +1,338 @@
+
+body{
+    background-color: #fcfcfc;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+
+
+.coming-soon {
+    color: #fff;
+}
+
+.coming-soon .counter-block .coming-soon-heading {
+    font-size: 58px;
+}
+
+.coming-soon .counter-block {
+    height: 120vh;
+    background-image: url(../images/coming_soon_bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.coming-soon .counter-block hr {
+    width: 50%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.coming-soon .counter-block .lead {
+    font-size: 30px;
+}
+
+.coming-soon .counter-block .lead2 {
+    font-size: 20px;
+}
+
+.coming-soon .counter-block .counter-details {
+    margin-top: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.coming-soon .counter-block .counter-details div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    width: 20%;
+    border: 1px solid #fff;
+    border-radius: 48%;
+    padding: 25px;
+    margin-left: 19px;
+    font-size: 25px;
+}
+
+.coming-soon .counter-block .counter-details div span {
+    display: block;
+}
+
+
+.coming-soon .counter-block .bottom-p {
+    margin-top: 40px;
+}
+
+
+.heading-block {
+    margin-top: 15%;
+}
+
+
+/* start contact form */
+
+.coming-soon .form-block {
+    height: 120vh;
+}
+
+.coming-soon .form-block .logo-block {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.coming-soon .form-block .logo-img {
+    width: 179px;
+    height: 197px;
+}
+
+
+.coming-soon .nav-tabs {
+    display: flex;
+    justify-content: center;
+}
+
+.coming-soon .tabs-block .nav-tabs>li.active>a,
+.coming-soon .tabs-block  .nav-tabs>li.active>a:focus,
+.coming-soon .tabs-block  .nav-tabs>li.active>a:hover {
+    background-image: linear-gradient(99deg, #04e5b9, #029fca);
+}
+
+
+.coming-soon .nav-tabs>li>a:hover,
+.coming-soon .nav-tabs>li>a:focus {
+    background-color: #f6f4f4;
+}
+
+.coming-soon .nav-tabs>li:nth-child(1)>a:hover,
+.coming-soon .nav-tabs>li:nth-child(1)>a:focus {
+    border-radius: 40px 0 0 40px;
+}
+
+.coming-soon .nav-tabs>li:nth-child(2)>a:hover,
+.coming-soon .nav-tabs>li:nth-child(2)>a:focus {
+    border-radius: 0 40px 40px 0;
+}
+
+.coming-soon .nav-tabs {
+    border-bottom: unset;
+}
+
+.coming-soon .nav-tabs>li {
+    background-color: #f6f4f4;
+    margin-left: -2px;
+}
+
+.coming-soon .nav-tabs li:nth-child(1) {
+    border-radius: 40px 0 0 40px;
+}
+
+.coming-soon .nav-tabs li.active:nth-child(1) a {
+    border-radius: 40px 0 0 40px;
+}
+
+.coming-soon .nav-tabs li:nth-child(2) {
+    border-radius: 0 40px 40px 0;
+}
+
+.coming-soon .nav-tabs li.active:nth-child(2) a {
+    border-radius: 0 40px 40px 0;
+}
+
+.coming-soon .nav-tabs li.active {
+    background-color: #fcfcfc;
+}
+
+.coming-soon .nav-tabs li a{
+    font-size: 21px;
+    color: #01a5cb;
+    padding: 15px 40px;
+}
+
+.coming-soon .nav-tabs li.active a{
+    color: #fff;
+}
+
+
+.nav-tabs>li>a:hover,
+.nav-tabs>li>a:focus {
+    border-color: #f6f4f4;
+    background-color: #eee;
+}
+
+
+
+
+.coming-soon .tabs-block .tab-content {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.coming-soon .tabs-block .tab-content .form-group {
+    width: 450px;
+    margin-bottom: 20px;
+}
+
+.coming-soon .tabs-block .tab-content .form-group .form-control {
+    background-color: #fcfcfc;
+    border-radius: 25px;
+    padding: 26px 15px;
+    box-shadow: unset;
+}
+
+
+
+.coming-soon .tabs-block .tab-content .contact-btn {
+    margin-right: 40px;
+    background-color: #00a4ca;
+    color: #fff;
+    border-radius: 35px;
+    padding: 15px 120px;
+}
+
+
+.coming-soon .tabs-block .tab-content .lead {
+    color: #9c9c9c;
+    margin-top: 10px;
+    margin-right: 30px;
+    margin-bottom: 0;
+}
+
+
+
+
+
+@media screen and (max-width:768px) {
+
+    body {
+        overflow: initial;
+    }
+
+
+    .heading-block {
+        margin-top: 5%;
+    }
+    
+    .coming-soon {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .coming-soon .nav-tabs li a {
+        font-size: 13px;
+        padding: 16px 26px;
+    }
+
+    .coming-soon .tabs-block .tab-content .form-group {
+        width: 100%;
+        margin-bottom: 25px;
+        margin-left: 18px;
+    }
+
+    .coming-soon .tabs-block .tab-content .contact-btn {
+        margin-right: -27px;
+        padding: 10px 70px;
+    }
+
+    .nav-tabs {
+        margin-left: 20px;
+        width: 100%;
+    }
+
+    .coming-soon .container-fluid {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .coming-soon .form-block .logo-block {
+        margin-top: 25px;
+    }
+
+    .coming-soon .tabs-block .tab-content {
+        display: block;
+    }
+
+    .coming-soon .tabs-block .tab-content .form-group .form-control {
+        padding: 25px 20px;
+    }
+
+
+    [class^=col-] {
+        padding-right: 21px;
+        padding-left: 5px;
+    }
+
+    .coming-soon .tabs-block .tab-content .lead {
+        color: #9c9c9c;
+        margin-top: 10px;
+        margin-right: 0;
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+
+    .coming-soon .counter-block,
+    .coming-soon .counter-block [class^=col-]{
+        height: 100%;
+        padding-right: 0;
+    }
+
+    .coming-soon .counter-block .coming-soon-heading {
+        font-size: 35px;
+    }
+
+    .coming-soon .counter-block .lead {
+        font-size: 20px;
+    }
+
+    .coming-soon .counter-block .counter-details {
+        margin-top: 30px;
+    }
+
+    .coming-soon .counter-block .counter-details div {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 130px;
+        border: 1px solid #fff;
+        border-radius: 48%;
+        padding: 18px;
+        margin-top: 11px;
+        font-size: 25px;
+    }
+
+    .coming-soon .counter-block .lead2 {
+        font-size: 14px;
+    }
+
+    .coming-soon .container-fluid .row {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column-reverse;
+    }
+
+    .coming-soon .form-block {
+        height: 100%;
+    }
+
+
+
+
+    .coming-soon .counter-block .bottom-p {
+        margin-top: 25px;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+/* end contact form */

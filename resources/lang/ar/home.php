@@ -10,6 +10,9 @@
 		'general_settings'=>'الإعدادات العامه',
 		'basic_info'=>'البيانات الاساسيه',
 
+		'name'=>'الإسم',
+		'address'=>'العنوان',
+		'send'=>'إرسال',
 		'title_ar'=>'العنوان بالعربيه',
 		'title_en'=>'العنوان بالإنجليزيه',
 		'name_ar'=>'الإسم بالعربيه',
@@ -48,6 +51,38 @@
 		'location'=>'العنوان',
 		'user_full_reports'=>'عرض تقارير المستخدم',
 		'browser'=>'المتصفح',
+		'success'=>'نجاح!',
+		'select_one'=>'اختر واحده',
+		'city'=>'مدينه',
+		'status'=>'الحاله',
+		'type'=>'النوع',
+		'reply'=>'الرد',
+
+		//comming soon site
+		'we_are_coming_soon'=>'قادمون قريبا',
+		'welcome_to_our_community'=>'أهلا بك في مجتمعنا		',
+		'days'=>'أيام',
+		'hours'=>'ساعات',
+		'minutes'=>'دقائق',
+		'seconds'=>'ثوان',
+		'our_Website_is_coming_soon'=>'سنكون هنا قريبا جداً',
+		'Please_register_here_to_be_updated_when_ready'=>"يرجى التسجيل لضمان اولوية حصولكم على الخدمة ",
+		'Register_for_user'=>'تسجيل مستخدم',
+		'Register_for_company'=>'تسجيل شركه',
+		'company'=>'شركه',
+		'We_will_contact_you_once_we_launch'=>' سيتم التواصل معكم فور الإنطلاق',
+		'registered_successfully'=>' تم التسجيل بنجاح',
+		//comming soon site
+		//comming soon dashboard
+		'wating_lists'=>'مستخدمين قيد الانتظار',
+		//comming soon dashboard
+		'search'=>'بحث',
+		'key_search_wating_list'=>'خيارات البحث اسم، بريد، نوع ، مدينه',
+		'log_case'=>'تسجيل الحاله',
+
+
+		'header_delete_model'=>'هل أنت متأكد من إتمام هذا العمل؟',
+		'body_delete_model'=>'ستتم إزالة هذا من قاعدة البيانات الخاصة بك. ',
 
 		
 		'smtp_builder'=>'تكوين بريد ',

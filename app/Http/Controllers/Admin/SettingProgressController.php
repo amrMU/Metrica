@@ -27,14 +27,15 @@ class SettingProgressController extends Controller
 					            'content_ar'=>$request['content_ar'],
 					            'content_en'=>$request['content_en'],
 					            'meta_tags'=>$request['meta_tags'],
-					            'extirnal_code'=>$request['extirnal_code'],
+								'extirnal_code'=> isset($request['extirnal_code']) ? $request['extirnal_code'] : '',
 					            'created_by'=>Auth::id()
 							]);
 		//has file
 		if(isset($request['logo'])){
 			$image =ImagesController::uploadSingle(
 				$request['logo'],
-				$path=public_path().'/uploads/images/logos/'.str_replace( ' ','_',$request['title_en'])
+				$path=public_path().'/uploads/images/logos/'.str_replace( ' ','_',$request['title_en']),
+				$db_path = '/uploads/images/logos/'.str_replace( ' ','_',$request['title_en'])
 			);
 			$model->find($model->first()->id)->update([
 				'logo'=>@$image,
@@ -67,7 +68,8 @@ class SettingProgressController extends Controller
 			if(isset($request['logo'])){
 				$image =ImagesController::uploadSingle(
 					$request['logo'],
-					$path=public_path().'/uploads/images/logos/'.str_replace( ' ','_',$request['title_en'])
+					$path=public_path().'/uploads/images/logos/'.str_replace( ' ','_',$request['title_en']),
+					$db_path = '/uploads/images/logos/'.str_replace( ' ','_',$request['title_en'])
 				);
 				$model->find($model->first()->id)->update([
 					'logo'=>@$image,
@@ -105,7 +107,6 @@ class SettingProgressController extends Controller
 
 	public static function store_mail_provider($request,$setting_id)
 	{
-
 	if (SettingMailProviderInfo::count() > 0 ) {
 		$delete_latest = SettingMailProviderInfo::where('setting_id',$setting_id)->forceDelete();
 	}
@@ -117,7 +118,6 @@ class SettingProgressController extends Controller
 				    'MAIL_PASSWORD'=>$request['mail_password'],
 				    'MAIL_port'=>$request['mail_port'],
 					]);
-
 		return $insert_mail_info;
 	}
 
