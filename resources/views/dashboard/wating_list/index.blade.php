@@ -33,6 +33,7 @@
 
                 <ul class="dropdown-menu dropdown-menu-right">
                 <li><a href="{{ URL::to('ar/admin/setting') }}"><i class="icon-gear"></i>@lang('home.general_settings')</a></li>
+                <li><a href="{{ URL::to('ar/admin/wating_lists/export') }}"><i class="icon-database-export"></i>@lang('home.export_exel_sheet')</a></li>
                 </ul>
             </li>
         </ul>

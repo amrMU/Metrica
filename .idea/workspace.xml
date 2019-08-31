@@ -5,20 +5,44 @@
       <change beforePath="$PROJECT_DIR$/.idea/metrica.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/metrica.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/DoFire.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/DoFire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Report.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Report.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/layouts/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/laravellocalization.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/100549ea776133295bedafcad97f8f686969df01.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/100549ea776133295bedafcad97f8f686969df01.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/2956e8942c459f67c2acf0822b28e62c3bc73c09.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/2956e8942c459f67c2acf0822b28e62c3bc73c09.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/4a6a67232170cf293b23469d2dbd4a3d1dd853a6.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/4a6a67232170cf293b23469d2dbd4a3d1dd853a6.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/c4d60a84afd70272f9dbf19ca2ad17ca847383ee.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/c4d60a84afd70272f9dbf19ca2ad17ca847383ee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/0ea657f89a22dc8c41dd6f637003292b88c18bea.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/0ea657f89a22dc8c41dd6f637003292b88c18bea.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/129ac36efa446d4aa3e544f57fcc560b07db7cce.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/129ac36efa446d4aa3e544f57fcc560b07db7cce.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/220261a874a4092be1a971146eceea6aa69067ee.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/220261a874a4092be1a971146eceea6aa69067ee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/249fd2a788208df942179cdb7dca555e0b656a92.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/249fd2a788208df942179cdb7dca555e0b656a92.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/32366b4e44351eb65654fa686ffc2beae05321fe.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/32366b4e44351eb65654fa686ffc2beae05321fe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/3f49d4d3b527a963bf448d74930b7f6d6500c1ab.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/3f49d4d3b527a963bf448d74930b7f6d6500c1ab.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/414fb7994fbb0fafab9620b9d5e48f64821c1388.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/414fb7994fbb0fafab9620b9d5e48f64821c1388.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/41f8a2726c1657d450cd507920061280cdea826b.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/41f8a2726c1657d450cd507920061280cdea826b.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/518331fb6791716fb97c589e16bf29f7dad750b1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/518331fb6791716fb97c589e16bf29f7dad750b1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/56ccb63c17d2fff18f2af4442957418657666b6d.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/56ccb63c17d2fff18f2af4442957418657666b6d.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/6e65eb9ff30eb22f525b6ec2a88ae22a869726ce.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/6e65eb9ff30eb22f525b6ec2a88ae22a869726ce.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/7af620cc0ca9272abe3562825080bfe077fc7089.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/7af620cc0ca9272abe3562825080bfe077fc7089.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/80f51453d9903e5fa5f52daefc8db91c0b2d2cf9.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/80f51453d9903e5fa5f52daefc8db91c0b2d2cf9.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/838b2ccb1ba462ecf68e33c4abc88ca51805d9d6.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/838b2ccb1ba462ecf68e33c4abc88ca51805d9d6.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/83fd8af255373f04de69878159a5ecaed8da543d.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/83fd8af255373f04de69878159a5ecaed8da543d.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/85c75d6448cce1d1688e64e6dbc132dc24954eae.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/85c75d6448cce1d1688e64e6dbc132dc24954eae.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/863d71e00abb22ab25594dd326d3b6f0becbefd3.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/863d71e00abb22ab25594dd326d3b6f0becbefd3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/86b589e3e524ff142c427f10e8ab4cb53d97c2ba.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/86b589e3e524ff142c427f10e8ab4cb53d97c2ba.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/96135bed0f3a8c561c4e08dce6a09af573ae4826.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/96135bed0f3a8c561c4e08dce6a09af573ae4826.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/a04f322472560124b94f35726a2f48ce7aec2b32.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/a04f322472560124b94f35726a2f48ce7aec2b32.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/a9ea39b7f7a1c1791e64fce53298156a7990dc1c.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/a9ea39b7f7a1c1791e64fce53298156a7990dc1c.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/b35fa56239ae98a308515e820bf5191fab3c89e2.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/b35fa56239ae98a308515e820bf5191fab3c89e2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/b5b66dd3d50fda6eb8604da93529301851bd2f40.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/b5b66dd3d50fda6eb8604da93529301851bd2f40.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/e2543dcd1fb8e7f20cf1fffa8727ad512f282106.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/e2543dcd1fb8e7f20cf1fffa8727ad512f282106.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/e5ea2b6ab2c017b69c9be07c82d707580ef90080.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/e5ea2b6ab2c017b69c9be07c82d707580ef90080.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/eeed9873393b8086a06e48c5b7616471c9d784ee.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/eeed9873393b8086a06e48c5b7616471c9d784ee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/f6355c241fc7a903eee7038d428b034dfa50d90c.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/f6355c241fc7a903eee7038d428b034dfa50d90c.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/uploads/images/logos/FB/200x200/21932496642.png" beforeDir="false" afterPath="$PROJECT_DIR$/storage/uploads/images/logos/FB/200x200/21932496642.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/uploads/images/logos/FB/200x200/56397773628.png" beforeDir="false" afterPath="$PROJECT_DIR$/storage/uploads/images/logos/FB/200x200/56397773628.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/uploads/images/logos/FB/50x50/21932496642.png" beforeDir="false" afterPath="$PROJECT_DIR$/storage/uploads/images/logos/FB/50x50/21932496642.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/uploads/images/logos/FB/50x50/56397773628.png" beforeDir="false" afterPath="$PROJECT_DIR$/storage/uploads/images/logos/FB/50x50/56397773628.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/uploads/images/logos/FB/org/21932496642.png" beforeDir="false" afterPath="$PROJECT_DIR$/storage/uploads/images/logos/FB/org/21932496642.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/uploads/images/logos/FB/org/56397773628.png" beforeDir="false" afterPath="$PROJECT_DIR$/storage/uploads/images/logos/FB/org/56397773628.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,49 +52,12 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../limet less RTL/material/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="24" selection-end-line="2934" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/resources/views/dashboard/home.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-      </list>
-    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -196,6 +183,9 @@
       <path value="$PROJECT_DIR$/vendor/spatie/browsershot" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-sitemap" />
       <path value="$PROJECT_DIR$/vendor/spatie/image" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/mcamara/laravel-localization" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -203,49 +193,8 @@
     <option name="width" value="1346" />
     <option name="height" value="735" />
   </component>
+  <component name="ProjectId" id="1QA5X87sAHpSgreZwOf0Yi0CZPj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="metrica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metrica" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="metrica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metrica" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="metrica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metrica" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="metrica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metrica" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="metrica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metrica" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -293,66 +242,23 @@
       <workItem from="1563885566504" duration="934000" />
       <workItem from="1564778291623" duration="45000" />
       <workItem from="1564778434080" duration="1988000" />
+      <workItem from="1567200599064" duration="46000" />
+      <workItem from="1567200825450" duration="2304000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7340000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1299" height="743" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24942264" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/assets/js/app.js" />
-    <entry file="file:///home/amr/Desktop/dash/mannatthemes.com/metrica/rtl/analytics/analytics-index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/dashboard/home.blade.php" />
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../limet less RTL/material/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="24" selection-end-line="2934" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -54,7 +54,7 @@ return [
 
     // 'url' => @url('/'),
 
-    'asset_url' => env('ASSET_URL', null),
+    'asset_url' => env('ASSET_URL', null),  
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => env('local_lang', 'ar'),
+    'locale' => env('local_lang', 'en'),
 
     /*
     |--------------------------------------------------------------------------
@@ -180,6 +180,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
 
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class
 
     ],
 
@@ -236,6 +237,7 @@ return [
         //laravel debuger
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class
 
 
     ],

@@ -21,7 +21,7 @@
 
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
-                        <li><a href="<?php echo e(URL::to('/admin/home')); ?>"><i class="icon-home2 position-left"></i> <?php echo app('translator')->getFromJson('home.home'); ?></a></li>
+                        <li><a href="<?php echo e(URL::to('ar/admin/home')); ?>"><i class="icon-home2 position-left"></i> <?php echo app('translator')->getFromJson('home.home'); ?></a></li>
                         <li class="active"> <?php echo app('translator')->getFromJson('home.dashboard'); ?></li>
                     </ul>
 
@@ -35,7 +35,7 @@
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="<?php echo e(URL::to('admin/setting')); ?>"><i class="icon-gear"></i><?php echo app('translator')->getFromJson('home.general_settings'); ?></a></li>
+                                <li><a href="<?php echo e(URL::to('ar/admin/setting')); ?>"><i class="icon-gear"></i><?php echo app('translator')->getFromJson('home.general_settings'); ?></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -149,7 +149,7 @@
                                             <ul class="dropdown-menu dropdown-menu-right">
                                                 <!-- <li><a href="#"><i class="icon-sync"></i> Update data</a></li> -->
                                                 <!-- <li><a href="#"><i class="icon-list-unordered"></i> Detailed log</a></li> -->
-                                                <li><a href="<?php echo e(URL::to('/admin/reports_browsing')); ?>"><i class="icon-copy"></i> <?php echo app('translator')->getFromJson('home.full_report'); ?></a></li>
+                                                <li><a href="<?php echo e(URL::to('ar/admin/reports_browsing')); ?>"><i class="icon-copy"></i> <?php echo app('translator')->getFromJson('home.full_report'); ?></a></li>
                                                 <!-- <li class="divider"></li> -->
                                                 <!-- <li><a href="#"><i class="icon-cross3"></i> Clear list</a></li> -->
                                             </ul>

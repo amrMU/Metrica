@@ -17,7 +17,7 @@
 
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
-                        <li><a href="<?php echo e(URL::to('admin/home')); ?>"><i class="icon-home2 position-left"></i> <?php echo app('translator')->getFromJson('home.home'); ?></a></li>
+                        <li><a href="<?php echo e(URL::to('ar/admin/home')); ?>"><i class="icon-home2 position-left"></i> <?php echo app('translator')->getFromJson('home.home'); ?></a></li>
                         <li class="active"><?php echo app('translator')->getFromJson('home.full_report'); ?></li>
                     </ul>
 
@@ -31,7 +31,7 @@
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a href="<?php echo e(URL::to('admin/setting')); ?>"><i class="icon-gear"></i><?php echo app('translator')->getFromJson('home.general_settings'); ?></a></li>
+                            <li><a href="<?php echo e(URL::to('ar/admin/setting')); ?>"><i class="icon-gear"></i><?php echo app('translator')->getFromJson('home.general_settings'); ?></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -57,6 +57,7 @@
                                         <tr>
                                         <th><?php echo app('translator')->getFromJson('home.user'); ?></th>                                        
                                         <th class="col-md-2"><?php echo app('translator')->getFromJson('home.action'); ?></th>
+                                        <th class="col-md-2"><?php echo app('translator')->getFromJson('home.process'); ?></th>
                                         <th class="col-md-2"><?php echo app('translator')->getFromJson('home.since'); ?></th>
                                         <th class="col-md-2"><?php echo app('translator')->getFromJson('home.ip'); ?></th>
                                         <th class="col-md-2"><?php echo app('translator')->getFromJson('home.location'); ?></th>
@@ -70,7 +71,7 @@
                                     <tr>
                                     <td>
                                         <div class="media-left">
-                                            <div class=""><a href="#" class="text-default text-semibold"><?php echo e(@$user->fname.' '.$user->lname); ?></a></div>
+                                            <div class=""><a href="#" class="text-default text-semibold"><?php echo e(@$user->user->fname.' '.$user->user->lname); ?></a></div>
                                             <?php if($user->key == 'dashboard_user_login'): ?>
                                                 <div class="text-muted text-size-small" title="online">
                                                     <span class="status-mark border-blue position-left"></span>
@@ -85,13 +86,14 @@
                                             <a href="#"><img src="<?php echo e(asset('/')); ?><?php echo e(@$user->image); ?>" class="img-circle img-xs" alt=""></a>
                                         </div>
                                        </td>
+                                       <td><?php echo $__env->make('dashboard.reports.user_reports_model', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?></td>
                                        <td><span class="label bg-blue"><?php echo e(@$user->text); ?></span></td>
                                        <td><span class="text-muted"><?php echo e(@Carbon\Carbon::parse($user->created_at)->diffForHumans()); ?></span></td>
                                        <td><span class="text-success-600"><i class="icon-stats-growth2 position-left"></i><?php echo e(@$user->ip); ?></span></td>
                                        <td><h6 class="text-semibold"><?php echo e(@$user->location); ?></h6></td>
                                        <td><h6 class="text-semibold"><?php echo e(@$user->browser); ?></h6></td>
                                         <td>
-                                            <a class="btn btn-danger btn-sm" href="<?php echo e(URL::to('/')); ?>/admin/reports_browsing/<?php echo e(@$user->id); ?>/delete"><li class="icon-trash"></li></a>
+                                            <a class="btn btn-danger btn-sm" href="<?php echo e(URL::to('ar/')); ?>/admin/reports_browsing/<?php echo e(@$user->id); ?>/delete"><li class="icon-trash"></li></a>
                                         </td>                            
                                     </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

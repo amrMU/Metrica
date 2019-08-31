@@ -76,6 +76,7 @@
 		'wating_lists'=>'Users wating Lists ',
 		//comming soon dashboard
 		'log_case'=>'Log Case',
+		'export_exel_sheet'=>'Export Exel Sheet',
 
 		'search'=>'Search',
 		'key_search_wating_list'=>'search key, name, email, phone, type, city',

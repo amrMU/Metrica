@@ -16,7 +16,7 @@
 
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
-                        <li><a href="<?php echo e(URL::to('/admin/home')); ?>"><i class="icon-home2 position-left"></i> <?php echo app('translator')->getFromJson('home.home'); ?></a></li>
+                        <li><a href="<?php echo e(URL::to('ar/admin/home')); ?>"><i class="icon-home2 position-left"></i> <?php echo app('translator')->getFromJson('home.home'); ?></a></li>
                         <li class="active"><?php echo app('translator')->getFromJson('home.general_settings'); ?></li>
                     </ul>
 
@@ -34,7 +34,7 @@
                                 <li><a href="#"><i class="icon-statistics"></i> Analytics</a></li>
                                 <li><a href="#"><i class="icon-accessibility"></i> Accessibility</a></li>
                                 <li class="divider"></li> -->
-                              <li><a href="<?php echo e(URL::to('admin/setting')); ?>"><i class="icon-gear"></i><?php echo app('translator')->getFromJson('home.general_settings'); ?></a></li>
+                              <li><a href="<?php echo e(URL::to('ar/admin/setting')); ?>"><i class="icon-gear"></i><?php echo app('translator')->getFromJson('home.general_settings'); ?></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -123,7 +123,7 @@
                                     <!-- /Meta Tags input -->
                                     <!-- extirnal code input -->
                                     <div class="form-group">
-                                        <label class="control-label col-lg-3"><?php echo app('translator')->getFromJson('home.extirnal_code'); ?> <span class="text-danger" title="<?php echo app('translator')->getFromJson('home.required'); ?>">*</span></label>
+                                        <label class="control-label col-lg-3"><?php echo app('translator')->getFromJson('home.extirnal_code'); ?> </label>
                                         <div class="col-lg-9">
                                             <textarea name="extirnal_code" class="form-control"  placeholder="<?php echo app('translator')->getFromJson('home.placeholder_code'); ?>"><?php echo @$info->extirnal_code; ?></textarea>
                                         </div>
@@ -138,12 +138,12 @@
                                     </div>
                                     <!-- /Logo uploader -->
                                    <!-- files uploader -->
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label class="control-label col-lg-3"><?php echo app('translator')->getFromJson('home.file_uploader'); ?></label>
                                         <div class="col-lg-9">
                                             <input type="file" name="external_resources[]" class="file-styled"  multiple>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- /files uploader -->
                                 </fieldset>
                                 
@@ -154,7 +154,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2">Mail Driver </label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="mail_driver" class="form-control" placeholder="Outgoing Server" value="<?php echo e($info->mail_provider_info->MAIL_DRIVER); ?>" >
+                                                <input type="text" name="mail_driver" class="form-control" placeholder="Outgoing Server" value="<?php echo e(@$info->mail_provider_info->MAIL_DRIVER); ?>" >
                                             </div>
                                         </div>
                                         <!-- /MAIL_DRIVER field -->
@@ -171,7 +171,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2"> Mail Username</label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="mail_username" class="form-control" placeholder="info@example.com" value="<?php echo e($info->mail_provider_info->MAIL_HOST); ?>" >
+                                                <input type="text" name="mail_username" class="form-control" placeholder="info@example.com" value="<?php echo e(@$info->mail_provider_info->MAIL_HOST); ?>" >
                                             </div>
                                         </div>
                                         <!-- /mail_user_name field -->
@@ -180,7 +180,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2">Mail Password</label>
                                             <div class="col-lg-9">
-                                                <input type="password" name="mail_password" class="form-control"  placeholder="*******" value="<?php echo e($info->mail_provider_info->MAIL_PASSWORD); ?>" >
+                                                <input type="password" name="mail_password" class="form-control"  placeholder="*******" value="<?php echo e(@$info->mail_provider_info->MAIL_PASSWORD); ?>" >
                                             </div>
                                         </div>
                                         <!-- /mail_password field -->
@@ -189,7 +189,7 @@
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2">Mail Port</label>
                                             <div class="col-lg-9">
-                                                <input type="text" name="mail_port" class="form-control" placeholder="Port" value="<?php echo e($info->mail_provider_info->MAIL_port); ?>">
+                                                <input type="text" name="mail_port" class="form-control" placeholder="Port" value="<?php echo e(@$info->mail_provider_info->MAIL_port); ?>">
                                             </div>
                                         </div>
                                         <!-- /Mail Port field -->
@@ -216,6 +216,7 @@
                                         </div>
                                         <!-- /email field -->
                                         <div id="space_emails">
+                                        <?php if(isset($info)): ?>
                                         <?php $__currentLoopData = $info->emails; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $email): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <div class="form-group " >
                                             <label class="control-label col-lg-2"><?php echo app('translator')->getFromJson('home.email'); ?> </label>
@@ -230,6 +231,7 @@
                                             </div>
                                         </div>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <?php endif; ?>
                                     </div>
                                 </fieldset>
                                 
@@ -251,6 +253,7 @@
                                         </div>
                                         <!-- /address field -->
                                         <div id="space_address">
+                                        <?php if(isset($info)): ?>
                                         <?php $__currentLoopData = $info->address; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $address): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <div class="form-group" >
                                             <label class="control-label col-lg-2"><?php echo app('translator')->getFromJson('home.address'); ?> </label>
@@ -262,7 +265,8 @@
                                             <button class="remove_field btn btn-danger">-</button>
                                             </div>
                                         </div>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>                                            
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>    
+                                        <?php endif; ?>                                        
                                         </div>
                                     </div>
                                 </fieldset>
@@ -284,6 +288,7 @@
                                         </div>
                                         <!--/ phone field -->
                                         <div id="space_phones">
+                                        <?php if(isset($info)): ?>
                                         <?php $__currentLoopData = $info->phones; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $phone): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <div class="form-group " >
                                             <label class="control-label col-lg-2"><?php echo app('translator')->getFromJson('home.phone'); ?> </label>
@@ -294,7 +299,8 @@
                                             <button class="remove_field btn btn-danger">-</button>
                                             </div>
                                         </div>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>                                            
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>   
+                                        <?php endif; ?>                                         
                                         </div>
                                     </div>
                                 </fieldset>
@@ -316,6 +322,7 @@
                                         </div>
                                         <!--/ whatsapp field -->
                                         <div id="space_whatsapp">
+                                        <?php if(isset($info)): ?>
                                         <?php $__currentLoopData = $info->whatsapp; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $whatsapp): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <div class="form-group " >
                                             <label class="control-label col-lg-2"><?php echo app('translator')->getFromJson('home.whatsapp'); ?> </label>
@@ -327,7 +334,8 @@
                                             <button class="remove_field btn btn-danger">-</button>
                                             </div>
                                         </div>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>                                                                                        
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>   
+                                        <?php endif; ?>                                                                                     
                                         </div>
                                     </div>
                                 </fieldset>
@@ -356,8 +364,8 @@
                                         </div>
                                         <!-- /social Media field -->
                                         <div id="space_social_media">
+                                        <?php if(isset($info)): ?>
                                         <?php $__currentLoopData = $info->social_media_link; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $link): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-
                                         <div class="form-group" >
                                             <div class="col-lg-2">
                                             <button class="remove_field btn btn-danger">-</button>
@@ -376,7 +384,7 @@
                                             </div>
                                         </div>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>                                                                                        
-
+                                        <?php endif; ?>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -391,8 +399,11 @@
                     </div>
                     <!-- /form validation -->
                     <div class="col-md-2">
-                    <img src="<?php echo e(url('/uploads/images/logos'.'/'.str_replace( ' ','_',$info->title_en).'/org').'/'.@$info->logo); ?>" class="img-responsive" style="max-width:100%" >
+                    <?php if(isset($setting)): ?>
+                    <img src="<?php echo e(url('/').@$info->logo); ?>" class="img-responsive" style="max-width:100%" >
+                    <?php endif; ?>
                     </div>
+                    <?php if(isset($info)): ?>                    
                     <?php $__currentLoopData = $info->external_resources; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="col-md-2">
                     <a href="<?php echo e(@$file->file); ?>" target="_blank">
@@ -403,6 +414,7 @@
                     </small>
                     </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php endif; ?>
             </div>
              <!-- Content area -->
 

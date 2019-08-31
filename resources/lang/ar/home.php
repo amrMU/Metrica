@@ -79,6 +79,7 @@
 		'search'=>'بحث',
 		'key_search_wating_list'=>'خيارات البحث اسم، بريد، نوع ، مدينه',
 		'log_case'=>'تسجيل الحاله',
+		'export_exel_sheet'=>'تصدير ملف exel',
 
 
 		'header_delete_model'=>'هل أنت متأكد من إتمام هذا العمل؟',

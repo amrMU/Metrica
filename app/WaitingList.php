@@ -3,6 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+
+use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
 
 class WaitingList extends Model
 {
@@ -16,12 +19,12 @@ class WaitingList extends Model
         'status',
     ];
 
+   
     public function scopeSearch($query, $search)
     {
         $keyword = $search['keyword']; 
         $is_user = $search['is_user']; 
         $is_company = $search['is_company']; 
-// dd($search,$is_user,$is_company);
         return $query->where(function($query) use ($search,$keyword,$is_user,$is_company)
         {
         if(isset($keyword) && $is_user == 'true' && $is_company == 'true'){

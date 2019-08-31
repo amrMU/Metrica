@@ -1,7 +1,7 @@
 
 <!-- Trigger the modal with a button -->
 <button type="button" class="btn btn-info " data-toggle="modal" data-target="#ReportProcess{{@$user->id}}">
-<li class="icon-info"></li>
+<li class="icon-bug2"></li>
 </button>
 <!-- Modal -->
 <div id="ReportProcess{{@$user->id}}" class="modal fade" role="dialog">
