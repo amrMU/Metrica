@@ -30,7 +30,9 @@
 
     <!-- Theme JS files -->
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/forms/tags/tagsinput.min.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/tables/datatables/datatables.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/tables/datatables/datatables.min.js"></script>
+    
+	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/forms/selects/select2.min.js"></script>
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/visualization/d3/d3.min.js"></script>
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/forms/styling/switchery.min.js"></script>
@@ -40,14 +42,15 @@
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/pickers/daterangepicker.js"></script>
 
     <script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/forms/tags/tokenfield.min.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/ui/prism.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/ui/prism.min.js"></script>
+	<script type="text/javascript" src="{{ asset('/') }}assets/js/pages/datatables_basic.js"></script>
+    
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js"></script>
 
     <script type="text/javascript" src="{{ asset('/') }}assets/js/core/app.js"></script>
     
-	<!-- <script type="text/javascript" src="{{ asset('/') }}assets/js/pages/dashboard.js"></script> -->
-	<script type="text/javascript" src="{{ asset('/') }}assets/js/pages/datatables_basic.js"></script>
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/pages/form_tags_input.js"></script>
+	<!-- <script type="text/javascript" src="{{ asset('/') }}assets/js/pages/dashboard.js"></script> -->
 
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/ui/ripple.min.js"></script>
     <!-- /theme JS files -->
@@ -61,7 +64,14 @@
             overflow: hidden;
         }
     </style> 
+    @else
+        <style>
+            .panel-title{
+                float:right
+            }
+        </style>
     @endif
+            
 </head>
 
 <body>
@@ -70,9 +80,9 @@
 <div class="navbar navbar-inverse bg-indigo">
     <div class="navbar-header">
         @if(isset($setting))
-        <a class="navbar-brand" href="{{URL::to('/admin/home')}}"><img src="{{url('/').@$setting->logo}}"  class="img-responsive"></a>
+        <a class="navbar-brand" href="{{URL::to('ar/admin/home')}}"><img src="{{url('/').@$setting->logo}}"  class="img-responsive"></a>
         @else
-        <a class="navbar-brand" href="{{URL::to('/admin/home')}}"><img src="{{ asset('/') }}assets/images/logo_light.png" class="img-responsive"></a>
+        <a class="navbar-brand" href="{{URL::to('ar/admin/home')}}"><img src="{{ asset('/') }}assets/images/logo_light.png" class="img-responsive"></a>
 
         @endif
         <ul class="nav navbar-nav visible-xs-block">
@@ -397,6 +407,13 @@
                             <li>
                                 <a href="{{ URL::to('ar/admin/wating_lists') }}"><i class="icon-stack2"></i> <span>@lang('home.wating_lists')</span></a>
                                
+                            </li>
+                            <li class="">
+									<a href="#" class="has-ul legitRipple"><i class="icon-users4"></i> <span>@lang('home.users')</span><span class="legitRipple-ripple" style="left: 39.2308%; top: 63.6364%; transform: translate3d(-50%, -50%, 0px); transition-duration: 0.2s, 0.5s; width: 202.844%;"></span></a>
+									<ul class="hidden-ul" style="display: none;">
+                                    <li><a href="{{ URL::to('ar/admin/users') }}" class="legitRipple">@lang('home.users_list')</a></li>
+                                    <li><a href="{{ URL::to('ar/admin/users/create') }}" class="legitRipple">@lang('home.create_users')</a></li>
+									</ul>
                             </li>
                         
                         </ul>

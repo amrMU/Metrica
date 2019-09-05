@@ -97,7 +97,18 @@
 		'placeholder_text'=>'اكتب نصاً هنا..',
 		'placeholder_code'=>'ضع كودك هنا..',
 		'placeholder_metatags'=>'تنشيط, محركات, البحث, هنا,',
-		'required'=>'يجب ادخاله!'
+		'required'=>'يجب ادخاله!',
+		'users'=>'المستخدمين',
+		'user'=>'مستخدم',
+		'users_list'=>'قائمة المستخدمين',
+		'create_users'=>'مستخدم جديد',
+		'add_new_user'=>'إضافة مستخدم جديد',
+		'avatar'=>'الملف الشخصي',
+		'fname'=>'الإسم الأول',
+		'lname'=>'الإسم الأخير',
+		'password'=>'كلمة المرور',
+		'password_confirmation'=>'تأكيد كلمة المرور', 
+		'generate'=>'توليد',
 
 
 	];

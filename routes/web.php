@@ -42,6 +42,10 @@
 			Route::get('wating_lists/export','Admin\WatingListController@ExportExelSheet');
 			Route::get('wating_lists/{id}/delete','Admin\WatingListController@destroy');
 
+			Route::resource('users','Admin\UsersController');
+			Route::get('users_export','Admin\UsersController@ExportExelSheet');
+
+
 			Route::get('sitemap/create','Admin\SitemapGeneratorController@create');
 			Route::post('sitemap','Admin\SitemapGeneratorController@store');
 		});

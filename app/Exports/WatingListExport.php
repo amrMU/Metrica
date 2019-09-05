@@ -31,7 +31,6 @@ class WatingListExport implements FromCollection, WithHeadings, ShouldAutoSize
    
     public function headings(): array
     {
-        // dd('headings');
         return [
             '#', 
             'Name',

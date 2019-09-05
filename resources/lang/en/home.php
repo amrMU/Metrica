@@ -91,11 +91,25 @@
 		'mail_password'=>'Mail Password',
 		'mail_port'=>'Mail Port',
 
-
 		'placeholder_text'=>'Write Context Here..',
 		'placeholder_code'=>'Put Your Code Here..',
 		'placeholder_metatags'=>'Activate, Search, Engines, Here..',
 		'required'=>'You must enter it!',
+		'user'=>'user',
+		'users'=>'users',
+		'users_list'=>'Users List',
+		'create_users'=>'Create User',
+		'add_new_user'=>'Add New User',
+		'avatar'=>'Avatar',
+		'fname'=>'First Name',
+		'lname'=>'Last Name',
+		'password'=>'Password',
+		'generate'=>'Generate',
+		'password_confirmation'=>'Password Confirmation'
+
+
+
+
 
 
 	];

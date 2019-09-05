@@ -30,7 +30,9 @@
 
     <!-- Theme JS files -->
 	<script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/forms/tags/tagsinput.min.js"></script>
-	<script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/tables/datatables/datatables.min.js"></script>
+    <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/tables/datatables/datatables.min.js"></script>
+    
+	<script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/forms/selects/select2.min.js"></script>
 	<script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/visualization/d3/d3.min.js"></script>
 	<script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
 	<script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/forms/styling/switchery.min.js"></script>
@@ -40,14 +42,15 @@
 	<script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/pickers/daterangepicker.js"></script>
 
     <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/forms/tags/tokenfield.min.js"></script>
-	<script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/ui/prism.min.js"></script>
+    <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/ui/prism.min.js"></script>
+	<script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/pages/datatables_basic.js"></script>
+    
 	<script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js"></script>
 
     <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/core/app.js"></script>
     
-	<!-- <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/pages/dashboard.js"></script> -->
-	<script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/pages/datatables_basic.js"></script>
 	<script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/pages/form_tags_input.js"></script>
+	<!-- <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/pages/dashboard.js"></script> -->
 
 	<script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/plugins/ui/ripple.min.js"></script>
     <!-- /theme JS files -->
@@ -61,7 +64,14 @@
             overflow: hidden;
         }
     </style> 
+    <?php else: ?>
+        <style>
+            .panel-title{
+                float:right
+            }
+        </style>
     <?php endif; ?>
+            
 </head>
 
 <body>
@@ -70,9 +80,9 @@
 <div class="navbar navbar-inverse bg-indigo">
     <div class="navbar-header">
         <?php if(isset($setting)): ?>
-        <a class="navbar-brand" href="<?php echo e(URL::to('/admin/home')); ?>"><img src="<?php echo e(url('/').@$setting->logo); ?>"  class="img-responsive"></a>
+        <a class="navbar-brand" href="<?php echo e(URL::to('ar/admin/home')); ?>"><img src="<?php echo e(url('/').@$setting->logo); ?>"  class="img-responsive"></a>
         <?php else: ?>
-        <a class="navbar-brand" href="<?php echo e(URL::to('/admin/home')); ?>"><img src="<?php echo e(asset('/')); ?>assets/images/logo_light.png" class="img-responsive"></a>
+        <a class="navbar-brand" href="<?php echo e(URL::to('ar/admin/home')); ?>"><img src="<?php echo e(asset('/')); ?>assets/images/logo_light.png" class="img-responsive"></a>
 
         <?php endif; ?>
         <ul class="nav navbar-nav visible-xs-block">
@@ -397,6 +407,13 @@
                             <li>
                                 <a href="<?php echo e(URL::to('ar/admin/wating_lists')); ?>"><i class="icon-stack2"></i> <span><?php echo app('translator')->getFromJson('home.wating_lists'); ?></span></a>
                                
+                            </li>
+                            <li class="">
+									<a href="#" class="has-ul legitRipple"><i class="icon-users4"></i> <span><?php echo app('translator')->getFromJson('home.users'); ?></span><span class="legitRipple-ripple" style="left: 39.2308%; top: 63.6364%; transform: translate3d(-50%, -50%, 0px); transition-duration: 0.2s, 0.5s; width: 202.844%;"></span></a>
+									<ul class="hidden-ul" style="display: none;">
+                                    <li><a href="<?php echo e(URL::to('ar/admin/users')); ?>" class="legitRipple"><?php echo app('translator')->getFromJson('home.users_list'); ?></a></li>
+                                    <li><a href="<?php echo e(URL::to('ar/admin/users/create')); ?>" class="legitRipple"><?php echo app('translator')->getFromJson('home.create_users'); ?></a></li>
+									</ul>
                             </li>
                         
                         </ul>

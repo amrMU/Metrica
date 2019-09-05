@@ -44,17 +44,17 @@ class WatingListController extends Controller
     public function ExportExelSheet(Request $request)
     {
         $lists = DB::table('waiting_lists_users')
-        ->join('cities', 'waiting_lists_users.address', '=', 'cities.id')
-        ->select(
-            'waiting_lists_users.id',
-            'waiting_lists_users.name',
-            'waiting_lists_users.email',
-            'cities.nameAr as address_ar',
-            'cities.nameEN as address_en',
-            'waiting_lists_users.phone',
-            'waiting_lists_users.type',
-            'waiting_lists_users.created_at'
-        )->get();
+                    ->join('cities', 'waiting_lists_users.address', '=', 'cities.id')
+                    ->select(
+                        'waiting_lists_users.id',
+                        'waiting_lists_users.name',
+                        'waiting_lists_users.email',
+                        'cities.nameAr as address_ar',
+                        'cities.nameEN as address_en',
+                        'waiting_lists_users.phone',
+                        'waiting_lists_users.type',
+                        'waiting_lists_users.created_at'
+                    )->get();
         $agent = new Agent();
         $agent = $agent->platform().','.$agent->browser().$agent->version($agent->browser());
         $data = ['key'=>'dashboard_export_wating_list','text'=>'Export Waiting List','browser'=>$agent];
