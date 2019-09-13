@@ -43,14 +43,14 @@
 
     <script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/forms/tags/tokenfield.min.js"></script>
     <script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/ui/prism.min.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}assets/js/pages/datatables_basic.js"></script>
     
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js"></script>
 
     <script type="text/javascript" src="{{ asset('/') }}assets/js/core/app.js"></script>
     
-	<script type="text/javascript" src="{{ asset('/') }}assets/js/pages/form_tags_input.js"></script>
 	<!-- <script type="text/javascript" src="{{ asset('/') }}assets/js/pages/dashboard.js"></script> -->
+	<script type="text/javascript" src="{{ asset('/') }}assets/js/pages/datatables_basic.js"></script>
+	<script type="text/javascript" src="{{ asset('/') }}assets/js/pages/form_tags_input.js"></script>
 
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/ui/ripple.min.js"></script>
     <!-- /theme JS files -->
@@ -403,7 +403,7 @@
 
                             <!-- Main -->
                             <!-- <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li> -->
-                            <li class="active"><a href="{{ URL::to('ar/admin/home') }}"><i class="icon-home4"></i> <span>@lang('home.dashboard')</span></a></li>
+                            <li class="active "><a href="{{ URL::to('ar/admin/home') }}"><i class="icon-home4"></i> <span>@lang('home.dashboard')</span></a></li>
                             <li>
                                 <a href="{{ URL::to('ar/admin/wating_lists') }}"><i class="icon-stack2"></i> <span>@lang('home.wating_lists')</span></a>
                                
@@ -411,8 +411,15 @@
                             <li class="">
 									<a href="#" class="has-ul legitRipple"><i class="icon-users4"></i> <span>@lang('home.users')</span><span class="legitRipple-ripple" style="left: 39.2308%; top: 63.6364%; transform: translate3d(-50%, -50%, 0px); transition-duration: 0.2s, 0.5s; width: 202.844%;"></span></a>
 									<ul class="hidden-ul" style="display: none;">
-                                    <li><a href="{{ URL::to('ar/admin/users') }}" class="legitRipple">@lang('home.users_list')</a></li>
-                                    <li><a href="{{ URL::to('ar/admin/users/create') }}" class="legitRipple">@lang('home.create_users')</a></li>
+                                        <li><a href="{{ URL::to('ar/admin/users') }}" class="">@lang('home.users_list')</a></li>
+                                        <li><a href="{{ URL::to('ar/admin/users/create') }}" class="legitRipple">@lang('home.create_users')</a></li>
+									</ul>
+                            </li>
+                            <li class="">
+									<a href="#" class="has-ul "><i class="icon-users4"></i> <span>@lang('home.categories')</span><span class="legitRipple-ripple" style="left: 39.2308%; top: 63.6364%; transform: translate3d(-50%, -50%, 0px); transition-duration: 0.2s, 0.5s; width: 202.844%;"></span></a>
+									<ul class="hidden-ul" style="display: none;">
+                                        <li><a href="{{ URL::to('ar/admin/categories') }}" class="">@lang('home.categories_list')</a></li>
+                                        <li><a href="{{ URL::to('ar/admin/categories/create') }}" class="legitRipple">@lang('home.create_categories')</a></li>
 									</ul>
                             </li>
                         

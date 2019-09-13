@@ -6,7 +6,7 @@
 <div class="page-header page-header-default">
     <div class="page-header-content">
         <div class="page-title">
-        <h4><i class="icon-arrow-right6 position-left"></i> <span class="text-semibold"><?php echo app('translator')->getFromJson('home.home'); ?></span> - <?php echo app('translator')->getFromJson('home.wating_lists'); ?></h4>
+        <h4><i class="icon-arrow-right6 position-left"></i> <span class="text-semibold"><?php echo app('translator')->getFromJson('home.home'); ?></span> - <?php echo app('translator')->getFromJson('home.categories_list'); ?></h4>
         </div>
 
         <div class="heading-elements">
@@ -18,7 +18,7 @@
     <div class="breadcrumb-line">
         <ul class="breadcrumb">
             <li><a href="<?php echo e(URL::to('ar/admin/home')); ?>"><i class="icon-home2 position-left"></i> <?php echo app('translator')->getFromJson('home.home'); ?></a></li>
-            <li class="active"><?php echo app('translator')->getFromJson('home.users'); ?></li>
+            <li class="active"><?php echo app('translator')->getFromJson('home.categories_list'); ?></li>
         </ul>
 
         <ul class="breadcrumb-elements">
@@ -33,7 +33,7 @@
                 <ul class="dropdown-menu dropdown-menu-right">
                 <li><a href="<?php echo e(URL::to('ar/admin/setting')); ?>"><i class="icon-gear"></i><?php echo app('translator')->getFromJson('home.general_settings'); ?></a></li>
                
-                <li><a href="<?php echo e(URL::to('ar/admin/users_export')); ?>"><i class="icon-database-export"></i><?php echo app('translator')->getFromJson('home.export_exel_sheet'); ?></a></li>
+                <li><a href="<?php echo e(URL::to('ar/admin/categories_export')); ?>"><i class="icon-database-export"></i><?php echo app('translator')->getFromJson('home.export_exel_sheet'); ?></a></li>
                 </ul>
             </li>
         </ul>
@@ -47,7 +47,6 @@
         <div class="row">
         <div class="panel panel-flat ">
         <!-- table lists -->
-     
         <div class="table-responsive">
         <?php if(Session('success')): ?>
         <div class="alert alert-success alert-dismissible">
@@ -55,46 +54,46 @@
             <strong><?php echo app('translator')->getFromJson('home.success'); ?>!</strong> <?php echo e(session('success')); ?>.
         </div>
         <?php endif; ?>
+            <!--  -->
             <table class="table text-nowrap table datatable-basic" id="table">
                 <thead>                  
                 <tr>                                     
                     <th class="col-md-2">#</th>
-                    <th class="col-md-2"><?php echo app('translator')->getFromJson('home.name'); ?></th>
-                    <th class="col-md-2"><?php echo app('translator')->getFromJson('home.email'); ?></th>
-                    <th class="col-md-2"><?php echo app('translator')->getFromJson('home.city'); ?></th>
-                    <th class="col-md-2"><?php echo app('translator')->getFromJson('home.phone'); ?></th>
-                    <th class="col-md-2"><?php echo app('translator')->getFromJson('home.type'); ?></th>
+                    <th class="col-md-2"><?php echo app('translator')->getFromJson('home.name_ar'); ?></th>
+                    <th class="col-md-2"><?php echo app('translator')->getFromJson('home.name_en'); ?></th>
+                    <th class="col-md-2"><?php echo app('translator')->getFromJson('home.parent'); ?></th>
+                    <th class="col-md-2"><?php echo app('translator')->getFromJson('home.icon'); ?></th>
                     <th class="col-md-2"><?php echo app('translator')->getFromJson('home.edit'); ?></th>
                     <th class="col-md-2"><?php echo app('translator')->getFromJson('home.delete'); ?></th>
                     
                 </tr>
                 </thead>
                 <tbody>
-                <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                    <td><span class="text-semibold"><?php echo e(@$user->id); ?></span></td>
-                    <td><span class="text-semibold"><?php echo e(@$user->fname.' '.$user->lname); ?></span></td>
-                    <td><span class="text-muted"><?php echo e(@$user->email); ?></span></td>
-                    <td><h6 class="text-semibold"><?php echo e(@$user->city->$name); ?></h6></td>
-                    <td><h6 class="text-semibold"><?php echo e(@$user->phone); ?></h6></td>
-                    <td><h6 class="text-semibold"><?php echo e(@$user->gander); ?></h6></td>
+                    <td><span class="text-semibold"><?php echo e(@$category->id); ?></span></td>
+                    <td><span class="text-semibold"><?php echo e(@$category->name_ar); ?></span></td>
+                    <td><span class="text-muted"><?php echo e(@$category->name_en); ?></span></td>
+                    <td><span class="text-muted">
+                        <?php if($category->parent_id != NULL): ?>
+                        <?php echo e((App::isLocale('en')  ? @$category->category->name_en : @$category->category->name_ar)); ?>
+
+                        <?php else: ?> 
+                        <?php echo app('translator')->getFromJson('home.non_parent'); ?>
+                        <?php endif; ?> 
+                    </span></td>
                     <td>
-                    <a href="<?php echo e(URL::to('ar/admin/users/').'/'.$user->id.'/edit'); ?>" class="btn btn-warning "> 
-                    <li class="icon-pencil5"></li>
-                    </a>
+                        <img src="<?php echo e(url('/'). @$category->icon); ?>" width="50" height="50" class="img-responsive" alt="<?php echo e(@$category->name_ar); ?>">
                     </td>
                     <td>
-                    <?php echo $__env->make('dashboard.users.delete_from_list', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-                    </td> 
+                        <a href="<?php echo e(URL::to('ar/admin/categories/').'/'.$category->id.'/edit'); ?>" class="btn btn-warning "><li class="icon-pencil5"></li></a>
+                    </td>
+                    <td><?php echo $__env->make('dashboard.categories.delete_from_list', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?></td> 
                 </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </tbody>
             </table>
-            <div style="padding:0 22%; margin-bottom: 24px;" class="center-block">
-            <?php echo e(@$users->links()); ?>
-
-            </div>
-
+            <!--  -->
         </div>
         <!-- table reports -->
     </div>

@@ -109,6 +109,24 @@
 		'password'=>'كلمة المرور',
 		'password_confirmation'=>'تأكيد كلمة المرور', 
 		'generate'=>'توليد',
+		'categories'=>'الأقسام',
+		'categories_list'=>'قائمة الأقسام',
+		'create_categories'=>'قسم جديد',
+		'add_new_category'=>'إضافة قسم جديد',
+		'choose_type_category'=>'اختيار نوع القسم',
+		'main_category'=>'قسم رئيسي',
+		'main_categories'=>'الأقسام الرئيسيه',
+		'sub_category'=>'قسم فرعي',
+		'child_list'=>'الأقسام الفرعيه',
+		'create_child'=>'اضافة قسم فرعي',
+		'edit'=>'تعديل',
+		'non_parent'=>'قسم رئيسي',
+		'parent'=>'القسم الرئيسي',
+		'icon'=>'الشعار',
+		'update_info'=>'تحديث البيانات'
+
+
+
 
 
 	];

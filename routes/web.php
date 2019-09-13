@@ -45,6 +45,10 @@
 			Route::resource('users','Admin\UsersController');
 			Route::get('users_export','Admin\UsersController@ExportExelSheet');
 
+			Route::resource('categories','Admin\CategoriesController');
+			Route::get('categories/{id}/delete','Admin\CategoriesController@destroy');
+			Route::get('categories_export','Admin\CategoriesController@ExportExelSheet');
+
 
 			Route::get('sitemap/create','Admin\SitemapGeneratorController@create');
 			Route::post('sitemap','Admin\SitemapGeneratorController@store');

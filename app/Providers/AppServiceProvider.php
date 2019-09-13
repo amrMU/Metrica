@@ -36,20 +36,8 @@ class AppServiceProvider extends ServiceProvider
                 view()->share('cities', $cities);
 
             }
-            if (Config::get('app.locale') == 'en'){
-                $title = 'title_en';
-                $content = 'content_en';
-                $name= 'nameEn';
-            }else{
-                $title = 'title_ar';
-                $content = 'content_ar';
-                $name= 'nameAr';
-                
-            }
             
-            view()->share('name',$name);
-            view()->share('title',$title);
-            view()->share('content',$content);
+            
         });
     }
 

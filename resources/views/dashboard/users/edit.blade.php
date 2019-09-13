@@ -31,7 +31,7 @@
 
                             <ul class="dropdown-menu dropdown-menu-right">
                               
-                              <li><a href="{{ URL::to('ar/admin/setting') }}"><i class="icon-gear"></i>@lang('home.create_users')</a></li>
+                              <li><a href="{{ URL::to('ar/admin/setting') }}"><i class="icon-gear"></i>@lang('home.settings')</a></li>
                             </ul>
                         </li>
                     </ul>

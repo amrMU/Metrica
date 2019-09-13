@@ -105,7 +105,25 @@
 		'lname'=>'Last Name',
 		'password'=>'Password',
 		'generate'=>'Generate',
-		'password_confirmation'=>'Password Confirmation'
+		'password_confirmation'=>'Password Confirmation',
+		'categories'=>'Categories',
+		'categories_list'=>'Categories List',
+		'create_categories'=>'Create Category',
+		'add_new_category'=>'Add New Category',
+		'choose_type_category'=>'Choose Type Category',
+		'main_category'=>'Main Category',
+		'main_categories'=>'Main Categories',
+		'sub_category'=>'Sub Category',
+		'child_list'=>'sub Categories List',
+		'create_child'=>'create sub Category',
+		'edit'=>'Edit',
+		'non_parent'=>'Parent Category',
+		'parent'=>'Parent Category',
+		'icon'=>'Icon',
+		'update_info'=>'Update Info'
+
+
+
 
 
 

@@ -30,7 +30,7 @@
 
                             <ul class="dropdown-menu dropdown-menu-right">
                               
-                              <li><a href="<?php echo e(URL::to('ar/admin/setting')); ?>"><i class="icon-gear"></i><?php echo app('translator')->getFromJson('home.create_users'); ?></a></li>
+                              <li><a href="<?php echo e(URL::to('ar/admin/setting')); ?>"><i class="icon-gear"></i><?php echo app('translator')->getFromJson('home.settings'); ?></a></li>
                             </ul>
                         </li>
                     </ul>
