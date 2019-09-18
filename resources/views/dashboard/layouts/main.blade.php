@@ -409,17 +409,17 @@
                                
                             </li>
                             <li class="">
-									<a href="#" class="has-ul legitRipple"><i class="icon-users4"></i> <span>@lang('home.users')</span><span class="legitRipple-ripple" style="left: 39.2308%; top: 63.6364%; transform: translate3d(-50%, -50%, 0px); transition-duration: 0.2s, 0.5s; width: 202.844%;"></span></a>
+									<a href="#" class="has-ul legitRipple"><i class="icon-users4"></i> <span>@lang('home.users')</span><span class="" style="left: 39.2308%; top: 63.6364%; transform: translate3d(-50%, -50%, 0px); transition-duration: 0.2s, 0.5s; width: 202.844%;"></span></a>
 									<ul class="hidden-ul" style="display: none;">
                                         <li><a href="{{ URL::to('ar/admin/users') }}" class="">@lang('home.users_list')</a></li>
-                                        <li><a href="{{ URL::to('ar/admin/users/create') }}" class="legitRipple">@lang('home.create_users')</a></li>
+                                        <li><a href="{{ URL::to('ar/admin/users/create') }}" class="">@lang('home.create_users')</a></li>
 									</ul>
                             </li>
                             <li class="">
-									<a href="#" class="has-ul "><i class="icon-users4"></i> <span>@lang('home.categories')</span><span class="legitRipple-ripple" style="left: 39.2308%; top: 63.6364%; transform: translate3d(-50%, -50%, 0px); transition-duration: 0.2s, 0.5s; width: 202.844%;"></span></a>
+									<a href="#" class="has-ul "><i class="icon-users4"></i> <span>@lang('home.categories')</span><span class="" style="left: 39.2308%; top: 63.6364%; transform: translate3d(-50%, -50%, 0px); transition-duration: 0.2s, 0.5s; width: 202.844%;"></span></a>
 									<ul class="hidden-ul" style="display: none;">
                                         <li><a href="{{ URL::to('ar/admin/categories') }}" class="">@lang('home.categories_list')</a></li>
-                                        <li><a href="{{ URL::to('ar/admin/categories/create') }}" class="legitRipple">@lang('home.create_categories')</a></li>
+                                        <li><a href="{{ URL::to('ar/admin/categories/create') }}" class="">@lang('home.create_categories')</a></li>
 									</ul>
                             </li>
                         
