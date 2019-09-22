@@ -16,7 +16,8 @@ class Category extends Model
         'icon'
 		
 	];
-	  public function setIconAttribute($icon)
+	 
+	public function setIconAttribute($icon)
 	{
 		if (Input::hasFile('icon')) {
 			//time 

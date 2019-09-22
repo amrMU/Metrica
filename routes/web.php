@@ -49,6 +49,10 @@
 			Route::get('categories/{id}/delete','Admin\CategoriesController@destroy');
 			Route::get('categories_export','Admin\CategoriesController@ExportExelSheet');
 
+			Route::resource('pages','Admin\PagesController');
+			Route::get('pages/{id}/delete','Admin\PagesController@destroy');
+			Route::get('pages_export','Admin\PagesController@ExportExelSheet');			
+
 
 			Route::get('sitemap/create','Admin\SitemapGeneratorController@create');
 			Route::post('sitemap','Admin\SitemapGeneratorController@store');

@@ -128,7 +128,7 @@
                                     <!-- /Meta Tags input -->
                                     <!-- Logo uploader -->
                                     <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.avatar') <span class="text-danger" title="@lang('home.required')"> *</span></label>
+                                        <label class="control-label col-lg-3">@lang('home.icon') <span class="text-danger" title="@lang('home.required')"> *</span></label>
                                         <div class="col-lg-9">
                                             <input type="file" name="icon" class="file-styled" >
                                         </div>

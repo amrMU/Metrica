@@ -76,7 +76,6 @@
                                 
                                 <fieldset class="content-group">
                                     <legend class="text-bold"><?php echo app('translator')->getFromJson('home.add_new_category'); ?></legend>
-
                                     <!-- choose type category input -->
                                     <div class="form-group">
                                     <label class="control-label col-lg-3"><?php echo app('translator')->getFromJson('home.choose_type_category'); ?> <span class="text-danger" title="<?php echo app('translator')->getFromJson('home.required'); ?>">*</span></label>

@@ -120,7 +120,16 @@
 		'non_parent'=>'Parent Category',
 		'parent'=>'Parent Category',
 		'icon'=>'Icon',
-		'update_info'=>'Update Info'
+		'update_info'=>'Update Info',
+		'create_page'=>'New Page',
+		'add_new_page'=>'Create New Page',
+		'icon'=>'Icon',
+		'url_page'=>'URL Page',
+		'show'=>'Show',
+		'hide'=>'Hide',
+		'pages_list'=>'Pages List',
+		'edit_page_info'=>'Update Page Info'
+
 
 
 

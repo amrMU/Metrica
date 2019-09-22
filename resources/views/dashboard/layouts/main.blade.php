@@ -37,6 +37,8 @@
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/forms/styling/switchery.min.js"></script>
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/forms/styling/uniform.min.js"></script>
+      <script src="https://cdn.ckeditor.com/4.12.1/standard-all/ckeditor.js"></script>
+    
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/ui/moment/moment.min.js"></script>
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/pickers/daterangepicker.js"></script>
@@ -47,8 +49,8 @@
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js"></script>
 
     <script type="text/javascript" src="{{ asset('/') }}assets/js/core/app.js"></script>
-    
-	<!-- <script type="text/javascript" src="{{ asset('/') }}assets/js/pages/dashboard.js"></script> -->
+
+	{{-- <script type="text/javascript" src="{{ asset('/') }}assets/js/pages/dashboard.js"></script> --}}
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/pages/datatables_basic.js"></script>
 	<script type="text/javascript" src="{{ asset('/') }}assets/js/pages/form_tags_input.js"></script>
 
@@ -416,11 +418,18 @@
 									</ul>
                             </li>
                             <li class="">
-									<a href="#" class="has-ul "><i class="icon-users4"></i> <span>@lang('home.categories')</span><span class="" style="left: 39.2308%; top: 63.6364%; transform: translate3d(-50%, -50%, 0px); transition-duration: 0.2s, 0.5s; width: 202.844%;"></span></a>
+									<a href="#" class="has-ul "><i class="icon-archive"></i> <span>@lang('home.categories')</span><span class="" style="left: 39.2308%; top: 63.6364%; transform: translate3d(-50%, -50%, 0px); transition-duration: 0.2s, 0.5s; width: 202.844%;"></span></a>
 									<ul class="hidden-ul" style="display: none;">
                                         <li><a href="{{ URL::to('ar/admin/categories') }}" class="">@lang('home.categories_list')</a></li>
                                         <li><a href="{{ URL::to('ar/admin/categories/create') }}" class="">@lang('home.create_categories')</a></li>
 									</ul>
+                            </li>
+                               <li class="">
+                                    <a href="#" class="has-ul "><i class="icon-newspaper"></i> <span>@lang('home.pages_list')</span><span class="" style="left: 39.2308%; top: 63.6364%; transform: translate3d(-50%, -50%, 0px); transition-duration: 0.2s, 0.5s; width: 202.844%;"></span></a>
+                                    <ul class="hidden-ul" style="display: none;">
+                                        <li><a href="{{ URL::to('ar/admin/pages') }}" class="">@lang('home.pages_list')</a></li>
+                                        <li><a href="{{ URL::to('ar/admin/pages/create') }}" class="">@lang('home.create_page')</a></li>
+                                    </ul>
                             </li>
                         
                         </ul>
