@@ -11,6 +11,16 @@
 |
 */
 
+// $client = new GuzzleHttp\Client();
+
+
+// use Goutte\Client;
+// use Illuminate\Http\Request;
+// use GuzzleHttp\Client as GuzzleClient;
+// use Symfony\Component\DomCrawler\Crawler;
+// use GuzzleHttp\Client;
+
+
 
 	Route::group(
 	[
