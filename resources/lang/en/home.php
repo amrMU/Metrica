@@ -128,7 +128,11 @@
 		'show'=>'Show',
 		'hide'=>'Hide',
 		'pages_list'=>'Pages List',
-		'edit_page_info'=>'Update Page Info'
+		'edit_page_info'=>'Update Page Info',
+		'blogs'=>'Blogs',
+		'blog_list'=>'Blog List',
+		'create_new'=>'create New',
+		'key_search_blogs_list'=>'search key, title, content'
 
 
 

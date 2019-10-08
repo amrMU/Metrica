@@ -62,6 +62,10 @@
 			Route::resource('pages','Admin\PagesController');
 			Route::get('pages/{id}/delete','Admin\PagesController@destroy');
 			Route::get('pages_export','Admin\PagesController@ExportExelSheet');			
+			
+			Route::resource('blogs','Admin\BlogsController');
+			Route::get('blogs/{id}/delete','Admin\BlogsController@destroy');
+			Route::get('blogs_export','Admin\BlogsController@ExportExelSheet');			
 
 
 			Route::get('sitemap/create','Admin\SitemapGeneratorController@create');

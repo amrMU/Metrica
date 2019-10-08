@@ -1,4 +1,7 @@
 @extends('dashboard.layouts.main')
+@section('style')
+    <script type="text/javascript" src="{{ asset('/') }}assets/js/pages/dashboard.js"></script>
+@stop
 @section('content')
         <!-- Main content -->
         <div class="content-wrapper">
@@ -6,7 +9,7 @@
             <div class="page-header page-header-default">
                 <div class="page-header-content">
                     <div class="page-title">
-                        <h4><i class="icon-arrow-right6 position-left"></i> <span class="text-semibold">@lang('home.create_users')</span> - @lang('home.dashboard')</h4>
+                        <h4><i class="icon-arrow-right6 position-left"></i> <span class="text-semibold"> @lang('home.dashboard') - @lang('home.blogs') - @lang('home.edit_page_info')</span></h4>
                     </div>
 
                     <div class="heading-elements">
@@ -18,7 +21,8 @@
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
                         <li><a href="{{ URL::to('ar/admin/home') }}"><i class="icon-home2 position-left"></i> @lang('home.home')</a></li>
-                        <li class="active">@lang('home.create_users')</li>
+                         <li><a href="{{ URL::to('ar/admin/blogs') }}"><i class="icon-blogger position-left"></i> @lang('home.blogs')</a></li>
+                        <li class="active">@lang('home.update_info')</li>
                     </ul>
 
                     <ul class="breadcrumb-elements">
@@ -44,7 +48,7 @@
                 <!-- Form validation -->
                     <div class="panel panel-flat col-md-10">
                         <div class="panel-heading">
-                            <h5 class="panel-title">@lang('home.create_users')</h5>
+                            <h5 class="panel-title">@lang('home.update_info')</h5>
                             <div class="heading-elements">
                                 <ul class="icons-list">
                                     <li><a data-action="collapse"></a></li>
@@ -55,7 +59,7 @@
                         </div>
 
                         <div class="panel-body">
-                            <form class="form-horizontal form-validate-jquery" method="post" action="{{ route('users.update',$info) }}" enctype='multipart/form-data'  >
+                            <form class="form-horizontal form-validate-jquery" method="post" action="{{ route('blogs.update',$info) }}" enctype='multipart/form-data'  >
                             <input name="_method" type="hidden" value="PUT">
                             <input name="use" type="hidden" value="{{@$info->id}}">
 
@@ -74,98 +78,89 @@
                                 @csrf
                                 {{-- general Info --}}
                                 <fieldset class="content-group">
-                                    <legend class="text-bold">@lang('home.add_new_user')</legend>
-
+                                <legend class="text-bold">@lang('home.add_new_category')</legend>
                                     <!-- title ar input -->
                                     <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.fname') <span class="text-danger" title="@lang('home.required')">*</span></label>
+                                        <label class="control-label col-lg-3">@lang('home.title_ar') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9">
-                                            <input type="text" name="fname" class="form-control" placeholder="@lang('home.fname')" value="{{@$info->fname}}">
+                                            <input type="text" name="title_ar" class="form-control" placeholder="@lang('home.title_ar')" value="{{@$info->title_ar}}">
                                         </div>
                                     </div>
                                     <!-- /title ar input -->
 
                                     <!-- title ar input -->
                                     <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.lname') <span class="text-danger" title="@lang('home.required')">*</span></label>
+                                        <label class="control-label col-lg-3">@lang('home.title_en') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9">
-                                            <input type="text" name="lname" class="form-control"  placeholder="@lang('home.lname')" value="{{@$info->lname}}">
+                                            <input type="text" name="title_en" class="form-control"  placeholder="@lang('home.title_en')" value="{{@$info->title_en}}">
                                         </div>
                                     </div>
                                     <!-- /title ar input -->
-
-
-                                 <!-- content ar input -->
+                                    <!-- title ar input -->
                                     <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.email') <span class="text-danger" title="@lang('home.required')">*</span></label>
+                                        <label class="control-label col-lg-3">@lang('home.url_page') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9">
-                                            <textarea name="email" class="form-control"  placeholder="@lang('home.email')">{{ @$info->email}}</textarea>
+                                            <input type="text" name="url" class="form-control"  placeholder="@lang('home.url_page')" value="{{@$info->url}}">
                                         </div>
                                     </div>
-                                    <!-- /content ar input -->
-                                    <!-- content en input -->
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.city') <span class="text-danger" title="@lang('home.required')">*</span></label>
-                                        <div class="col-lg-9"> 
-                                        <select name="city_id" class="form-control">
-                                            <option value="null">@lang('home.address')</option>
-                                                @foreach($cities as $city)
-                                                    <option value="{{@$city->id}}" @if($info->city_id == $city->id) {{'selected'}} @endif>{{(App::isLocale('en')  ? @$city->nameEn : @$city->nameAr)}}</option>
-                                                @endforeach
-                                        </select>
-                                        </div>
-                                    </div>
-                                    <!-- /content en input -->                                    
+                                    <!-- /title ar input -->
                                     <!-- Meta Tags input -->
                                     <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.phone') <span class="text-danger" title="@lang('home.required')">*</span></label>
+                                        <label class="control-label col-lg-3">@lang('home.meta_tags') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9">
-                                            <input type="text" name="phone" class="form-control" placeholder="@lang('home.phone')" value="{{@$info->phone}}">
+                                            <input type="text" name="meta_tags" class="form-control tokenfield" value="@lang('home.placeholder_metatags')" value="{{@$info->meta_tags}}">
                                         </div>
                                     </div>
                                     <!-- /Meta Tags input -->
-                                    <!-- password input -->
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.password')<span class="text-danger" title="@lang('home.required')">*</span> </label>
+                                    {{-- content ar --}}
+                                     <div class="form-group">
+                                        <label class="control-label col-lg-3">@lang('home.content_ar') <span class="text-danger" title="@lang('home.required')">*</span></label>
                                         <div class="col-lg-9">
-                                            <div class="input-group">
-                                            @if(LaravelLocalization::getCurrentLocale() == 'en')
-                                            <input type="text" class="form-control" name="password" placeholder="@lang('home.password')" id="input_password"  autocomplete="off">
-                                            	<span class="input-group-btn">
-													<button class="btn btn-default legitRipple" type="button" id="generate_password">
-                                                    @lang('home.generate') 
-                                                    <li class="glyphicon glyphicon-eye-open"></li>
-                                                    </button>
-												</span>
-                                            @else
-                                            <span class="input-group-btn">
-													<button class="btn btn-default legitRipple" type="button" id="generate_password">
-                                                    @lang('home.generate') 
-                                                    <li class="glyphicon glyphicon-eye-open"></li>
-                                                    </button>
-												</span>
-                                                <input type="text" class="form-control" name="password" placeholder="@lang('home.password')" id="input_password"  autocomplete="off">
-                                            @endif
+                                             <textarea name="content_ar" id="editor1" rows="4" cols="4"  placeholder="@lang('home.content_ar')">{{ @$info->content_ar }}</textarea>
+                                        </div>
+                                    </div>
+                                   
+                                    {{-- content ar --}}
+                                    {{-- content en --}}
+                                     <div class="form-group">
+                                        <label class="control-label col-lg-3">@lang('home.content_en') <span class="text-danger" title="@lang('home.required')">*</span></label>
+                                        <div class="col-lg-9">
+                                             <textarea name="content_en" id="editor2" rows="4" cols="4"  placeholder="@lang('home.content_en')">{{ @$info->content_en }}</textarea>
+                                        </div>
+                                    </div>
+                                    {{-- content en --}}
+
+                                    {{-- Show page --}}
+                                     <div class="form-group">
+                                        <label class="control-label col-lg-3">@lang('home.status')</label>
+                                        <div class="col-lg-4">
+                                            <div class="checkbox checkbox-switch">
+                                                        <input type="radio" name="status" class="switch" value="show" @if($info->status  == 'show') checked="checked"  @endif>
+                                                    <label>
+                                                         @lang('home.show')
+                                                    </label>
+                                            </div>
+                                        </div>
+                                         <div class="col-lg-4">
+                                            <div class="checkbox checkbox-switch">
+                                                    <input type="radio" name="status" class="switch" value="hide" @if($info->status  == 'hide') checked="checked" @endif >
+                                                    <label>
+                                                        @lang('home.hide')
+                                                    </label>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.password_confirmation') <span class="text-danger" title="@lang('home.required')">*</span></label>
-                                        <div class="col-lg-9">
-                                            <input type="password" name="password_confirmation" class="form-control"  id="input_password_confirm">
-                                        </div>
-                                    </div>
-
-                                    <!--/password input -->
+                                    {{--Show page --}}
+                                     
                                     <!-- Logo uploader -->
                                     <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.avatar') <span class="text-danger" title="@lang('home.required')"> *</span></label>
+                                        <label class="control-label col-lg-3">@lang('home.image') <span class="text-danger" title="@lang('home.required')"> *</span></label>
                                         <div class="col-lg-9">
                                             <input type="file" name="image" class="file-styled" >
                                         </div>
                                     </div>
                                     <!-- /Logo uploader -->
+                                 
                                  
                                 </fieldset>
                                 {{-- general Info --}}
@@ -180,7 +175,7 @@
                     </div>
                     <!-- /form validation -->
                     <div class="col-md-2">
-                    <img src="{{url('/').@$info->image}}" class="img-responsive" style="max-width:100%" >
+                    <img src="{{url('/').'/'.@$info->image}}" class="img-responsive" style="max-width:100%" >
                     </div>
                   
             </div>
@@ -191,13 +186,13 @@
 @stop
 
 @section('jsCode')
-    <script>
-    $('#generate_password').click(function(){
-        var randomstring = Math.random().toString(36).slice(-8);
-        $('#input_password').val(randomstring);input_password_confirm
-        $('#input_password_confirm').val(randomstring);
-
-
-    });
+    <script type="text/javascript">
+          // Full featured editor
+        CKEDITOR.replace( 'editor1',{
+            extraPlugins: 'forms'
+        });
+        CKEDITOR.replace( 'editor2',{
+            extraPlugins: 'forms'
+        });
     </script>
 @stop

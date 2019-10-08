@@ -9,7 +9,7 @@
             <div class="page-header page-header-default">
                 <div class="page-header-content">
                     <div class="page-title">
-                        <h4><i class="icon-arrow-right6 position-left"></i> <span class="text-semibold">@lang('home.create_page')</span> - @lang('home.dashboard')</h4>
+                        <h4><i class="icon-arrow-right6 position-left"></i>  @lang('home.dashboard') -  <span class="text-semibold">@lang('home.blogs')</span>  - <span class="text-semibold">@lang('home.create_new')</span></h4>
                     </div>
 
                     <div class="heading-elements">
@@ -21,7 +21,8 @@
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
                         <li><a href="{{ URL::to('ar/admin/home') }}"><i class="icon-home2 position-left"></i> @lang('home.home')</a></li>
-                        <li class="active">@lang('home.create_page')</li>
+                        <li><a href="{{ URL::to('ar/admin/blogs') }}"><i class="icon-blogger position-left"></i> @lang('home.blogs')</a></li>
+                        <li class="active">@lang('home.create_new')</li>
                     </ul>
 
                     <ul class="breadcrumb-elements">
@@ -49,7 +50,7 @@
 
                         <div class="panel-heading">
                    
-                        <h5 class="panel-title" > @lang('home.create_page') </h5>
+                        <!-- <h5 class="panel-title" > @lang('home.create_new') </h5> -->
                             <div class="heading-elements">
                                 <ul class="icons-list">
                                     <li><a data-action="collapse"></a></li>
@@ -60,8 +61,7 @@
                         </div>
 
                         <div class="panel-body">
-                            <form class="form-horizontal form-validate-jquery" method="POST" action="{{ URL::to('/admin/pages') }}" enctype='multipart/form-data'>
-
+                            <form class="form-horizontal form-validate-jquery" method="POST" action="{{ URL::to('/admin/blogs') }}" enctype='multipart/form-data'>
                                 @if ($errors->any())
                                 @foreach ($errors->all() as $error)
                                 <div class="alert alert-danger alert-dismissible" >
@@ -77,7 +77,7 @@
                                 @csrf
                                 {{-- general Info --}}
                                 <fieldset class="content-group">
-                                    <legend class="text-bold">@lang('home.add_new_page')</legend>
+                                    <legend class="text-bold">@lang('home.create_new')</legend>
                                     
                                     <!-- title ar input -->
                                     <div class="form-group">
@@ -135,7 +135,7 @@
                                         <label class="control-label col-lg-3">@lang('home.status')</label>
                                         <div class="col-lg-4">
                                             <div class="checkbox checkbox-switch">
-                                                        <input type="radio" name="status" class="switch" value="show" >
+                                                        <input type="radio" name="status" class="switch" value="show" checked="">
                                                     <label>
                                                          @lang('home.show')
                                                     </label>
@@ -154,9 +154,9 @@
                                      
                                     <!-- Logo uploader -->
                                     <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.icon') <span class="text-danger" title="@lang('home.required')"> *</span></label>
+                                        <label class="control-label col-lg-3">@lang('home.image') <span class="text-danger" title="@lang('home.required')"> *</span></label>
                                         <div class="col-lg-9">
-                                            <input type="file" name="icon" class="file-styled" >
+                                            <input type="file" name="image" class="file-styled" >
                                         </div>
                                     </div>
                                     <!-- /Logo uploader -->

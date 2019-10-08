@@ -1,15 +1,14 @@
-@extends('dashboard.layouts.main')
-@section('style')
-    <script type="text/javascript" src="{{ asset('/') }}assets/js/pages/dashboard.js"></script>
-@stop
-@section('content')
+<?php $__env->startSection('style'); ?>
+    <script type="text/javascript" src="<?php echo e(asset('/')); ?>assets/js/pages/dashboard.js"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
         <!-- Main content -->
         <div class="content-wrapper">
                         <!-- Page header -->
             <div class="page-header page-header-default">
                 <div class="page-header-content">
                     <div class="page-title">
-                        <h4><i class="icon-arrow-right6 position-left"></i> <span class="text-semibold">@lang('home.create_page')</span> - @lang('home.dashboard')</h4>
+                        <h4><i class="icon-arrow-right6 position-left"></i> <span class="text-semibold"><?php echo app('translator')->getFromJson('home.create_page'); ?></span> - <?php echo app('translator')->getFromJson('home.dashboard'); ?></h4>
                     </div>
 
                     <div class="heading-elements">
@@ -20,20 +19,20 @@
 
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
-                        <li><a href="{{ URL::to('ar/admin/home') }}"><i class="icon-home2 position-left"></i> @lang('home.home')</a></li>
-                        <li class="active">@lang('home.create_page')</li>
+                        <li><a href="<?php echo e(URL::to('ar/admin/home')); ?>"><i class="icon-home2 position-left"></i> <?php echo app('translator')->getFromJson('home.home'); ?></a></li>
+                        <li class="active"><?php echo app('translator')->getFromJson('home.create_page'); ?></li>
                     </ul>
 
                     <ul class="breadcrumb-elements">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="icon-gear position-left"></i>
-                                @lang('home.settings')
+                                <?php echo app('translator')->getFromJson('home.settings'); ?>
                                 <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-right">
-                              <li><a href="{{ URL::to('ar/admin/setting') }}"><i class="icon-gear"></i>@lang('home.settings')</a></li>
+                              <li><a href="<?php echo e(URL::to('ar/admin/setting')); ?>"><i class="icon-gear"></i><?php echo app('translator')->getFromJson('home.settings'); ?></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -49,7 +48,7 @@
 
                         <div class="panel-heading">
                    
-                        <h5 class="panel-title" > @lang('home.create_page') </h5>
+                        <h5 class="panel-title" > <?php echo app('translator')->getFromJson('home.create_page'); ?> </h5>
                             <div class="heading-elements">
                                 <ul class="icons-list">
                                     <li><a data-action="collapse"></a></li>
@@ -60,84 +59,86 @@
                         </div>
 
                         <div class="panel-body">
-                            <form class="form-horizontal form-validate-jquery" method="POST" action="{{ URL::to('/admin/pages') }}" enctype='multipart/form-data'>
+                            <form class="form-horizontal form-validate-jquery" method="POST" action="<?php echo e(URL::to('/admin/pages')); ?>" enctype='multipart/form-data'>
 
-                                @if ($errors->any())
-                                @foreach ($errors->all() as $error)
+                                <?php if($errors->any()): ?>
+                                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="alert alert-danger alert-dismissible" >
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close" style="right: 5px;">&times;</a>{{ $error }}
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close" style="right: 5px;">&times;</a><?php echo e($error); ?>
+
                                 </div>
-                                @endforeach
-                                @endif
-                                @if(Session::has('success'))
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <?php endif; ?>
+                                <?php if(Session::has('success')): ?>
                                 <div class="alert alert-success alert-dismissible">
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close" style="right: 5px;">&times;</a>{{ Session::get('success') }}
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close" style="right: 5px;">&times;</a><?php echo e(Session::get('success')); ?>
+
                                 </div>
-                                @endif
-                                @csrf
-                                {{-- general Info --}}
+                                <?php endif; ?>
+                                <?php echo csrf_field(); ?>
+                                
                                 <fieldset class="content-group">
-                                    <legend class="text-bold">@lang('home.add_new_page')</legend>
+                                    <legend class="text-bold"><?php echo app('translator')->getFromJson('home.add_new_page'); ?></legend>
                                     
                                     <!-- title ar input -->
                                     <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.title_ar') <span class="text-danger" title="@lang('home.required')">*</span></label>
+                                        <label class="control-label col-lg-3"><?php echo app('translator')->getFromJson('home.title_ar'); ?> <span class="text-danger" title="<?php echo app('translator')->getFromJson('home.required'); ?>">*</span></label>
                                         <div class="col-lg-9">
-                                            <input type="text" name="title_ar" class="form-control" placeholder="@lang('home.title_ar')" value="{{Request::old('title_ar')}}">
+                                            <input type="text" name="title_ar" class="form-control" placeholder="<?php echo app('translator')->getFromJson('home.title_ar'); ?>" value="<?php echo e(Request::old('title_ar')); ?>">
                                         </div>
                                     </div>
                                     <!-- /title ar input -->
 
                                     <!-- title ar input -->
                                     <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.title_en') <span class="text-danger" title="@lang('home.required')">*</span></label>
+                                        <label class="control-label col-lg-3"><?php echo app('translator')->getFromJson('home.title_en'); ?> <span class="text-danger" title="<?php echo app('translator')->getFromJson('home.required'); ?>">*</span></label>
                                         <div class="col-lg-9">
-                                            <input type="text" name="title_en" class="form-control"  placeholder="@lang('home.title_en')" value="{{Request::old('title_en')}}">
+                                            <input type="text" name="title_en" class="form-control"  placeholder="<?php echo app('translator')->getFromJson('home.title_en'); ?>" value="<?php echo e(Request::old('title_en')); ?>">
                                         </div>
                                     </div>
                                     <!-- /title ar input -->
                                     <!-- title ar input -->
                                     <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.url_page') <span class="text-danger" title="@lang('home.required')">*</span></label>
+                                        <label class="control-label col-lg-3"><?php echo app('translator')->getFromJson('home.url_page'); ?> <span class="text-danger" title="<?php echo app('translator')->getFromJson('home.required'); ?>">*</span></label>
                                         <div class="col-lg-9">
-                                            <input type="text" name="url" class="form-control"  placeholder="@lang('home.url_page')" value="{{Request::old('url')}}">
+                                            <input type="text" name="url" class="form-control"  placeholder="<?php echo app('translator')->getFromJson('home.url_page'); ?>" value="<?php echo e(Request::old('url')); ?>">
                                         </div>
                                     </div>
                                     <!-- /title ar input -->
                                     <!-- Meta Tags input -->
                                     <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.meta_tags') <span class="text-danger" title="@lang('home.required')">*</span></label>
+                                        <label class="control-label col-lg-3"><?php echo app('translator')->getFromJson('home.meta_tags'); ?> <span class="text-danger" title="<?php echo app('translator')->getFromJson('home.required'); ?>">*</span></label>
                                         <div class="col-lg-9">
-                                            <input type="text" name="meta_tags" class="form-control tokenfield" value="@lang('home.placeholder_metatags')" value="{{Request::old('meta_tags')}}">
+                                            <input type="text" name="meta_tags" class="form-control tokenfield" value="<?php echo app('translator')->getFromJson('home.placeholder_metatags'); ?>" value="<?php echo e(Request::old('meta_tags')); ?>">
                                         </div>
                                     </div>
                                     <!-- /Meta Tags input -->
-                                    {{-- content ar --}}
+                                    
                                      <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.content_ar') <span class="text-danger" title="@lang('home.required')">*</span></label>
+                                        <label class="control-label col-lg-3"><?php echo app('translator')->getFromJson('home.content_ar'); ?> <span class="text-danger" title="<?php echo app('translator')->getFromJson('home.required'); ?>">*</span></label>
                                         <div class="col-lg-9">
-                                             <textarea name="content_ar" id="editor1" rows="4" cols="4"  placeholder="@lang('home.content_ar')">{{ Request::old('content_ar') }}</textarea>
+                                             <textarea name="content_ar" id="editor1" rows="4" cols="4"  placeholder="<?php echo app('translator')->getFromJson('home.content_ar'); ?>"><?php echo e(Request::old('content_ar')); ?></textarea>
                                         </div>
                                     </div>
                                    
-                                    {{-- content ar --}}
-                                    {{-- content en --}}
+                                    
+                                    
                                      <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.content_en') <span class="text-danger" title="@lang('home.required')">*</span></label>
+                                        <label class="control-label col-lg-3"><?php echo app('translator')->getFromJson('home.content_en'); ?> <span class="text-danger" title="<?php echo app('translator')->getFromJson('home.required'); ?>">*</span></label>
                                         <div class="col-lg-9">
-                                             <textarea name="content_en" id="editor2" rows="4" cols="4"  placeholder="@lang('home.content_en')">{{ Request::old('content_en') }}</textarea>
+                                             <textarea name="content_en" id="editor2" rows="4" cols="4"  placeholder="<?php echo app('translator')->getFromJson('home.content_en'); ?>"><?php echo e(Request::old('content_en')); ?></textarea>
                                         </div>
                                     </div>
-                                    {{-- content en --}}
+                                    
 
-                                    {{-- Show page --}}
+                                    
                                      <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.status')</label>
+                                        <label class="control-label col-lg-3"><?php echo app('translator')->getFromJson('home.status'); ?></label>
                                         <div class="col-lg-4">
                                             <div class="checkbox checkbox-switch">
                                                         <input type="radio" name="status" class="switch" value="show" >
                                                     <label>
-                                                         @lang('home.show')
+                                                         <?php echo app('translator')->getFromJson('home.show'); ?>
                                                     </label>
                                             </div>
                                         </div>
@@ -145,16 +146,16 @@
                                             <div class="checkbox checkbox-switch">
                                                     <input type="radio" name="status" class="switch" value="hide"  >
                                                     <label>
-                                                        @lang('home.hide')
+                                                        <?php echo app('translator')->getFromJson('home.hide'); ?>
                                                     </label>
                                             </div>
                                         </div>
                                     </div>
-                                    {{--Show page --}}
+                                    
                                      
                                     <!-- Logo uploader -->
                                     <div class="form-group">
-                                        <label class="control-label col-lg-3">@lang('home.icon') <span class="text-danger" title="@lang('home.required')"> *</span></label>
+                                        <label class="control-label col-lg-3"><?php echo app('translator')->getFromJson('home.icon'); ?> <span class="text-danger" title="<?php echo app('translator')->getFromJson('home.required'); ?>"> *</span></label>
                                         <div class="col-lg-9">
                                             <input type="file" name="icon" class="file-styled" >
                                         </div>
@@ -162,7 +163,7 @@
                                     <!-- /Logo uploader -->
                                  
                                 </fieldset>
-                                {{-- general Info --}}
+                                
                               
                            
                                 <div class="text-right">
@@ -180,9 +181,9 @@
 
         </div>
         <!-- Main content -->
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('jsCode')
+<?php $__env->startSection('jsCode'); ?>
     <script type="text/javascript">
           // Full featured editor
         CKEDITOR.replace( 'editor1',{
@@ -192,4 +193,5 @@
             extraPlugins: 'forms'
         });
     </script>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('dashboard.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
