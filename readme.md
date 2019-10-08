@@ -6,9 +6,13 @@ Slim It's a Awesome Dashboard Has Most Component To Use In Your Application .. M
 All Mobile Applications & Web Application Have Standard Or Base Informations .. I've Collected Data Shared In All This And Built It.
 
 ## components:
+
 ##Site
+
 ..* Comming Soon InterFace with Ar, En Languages  to receiving subscription user info 
+
 ##Control Panel
+
 #Languge support Ar, En
 
 ..* Track all panel user what are you doing boot and save it to check all after if i have rule.
