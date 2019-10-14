@@ -11,16 +11,6 @@
 |
 */
 
-// $client = new GuzzleHttp\Client();
-
-
-// use Goutte\Client;
-// use Illuminate\Http\Request;
-// use GuzzleHttp\Client as GuzzleClient;
-// use Symfony\Component\DomCrawler\Crawler;
-// use GuzzleHttp\Client;
-
-
 
 	Route::group(
 	[
@@ -61,11 +51,12 @@
 
 			Route::resource('pages','Admin\PagesController');
 			Route::get('pages/{id}/delete','Admin\PagesController@destroy');
-			Route::get('pages_export','Admin\PagesController@ExportExelSheet');			
-			
+			Route::get('pages_export','Admin\PagesController@ExportExelSheet');
+
 			Route::resource('blogs','Admin\BlogsController');
 			Route::get('blogs/{id}/delete','Admin\BlogsController@destroy');
-			Route::get('blogs_export','Admin\BlogsController@ExportExelSheet');			
+			Route::get('blogs_search','Admin\BlogsController@search');			
+			Route::get('blogs_export','Admin\BlogsController@ExportExelSheet');
 
 
 			Route::get('sitemap/create','Admin\SitemapGeneratorController@create');

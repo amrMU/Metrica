@@ -19,6 +19,7 @@
     <div class="breadcrumb-line">
         <ul class="breadcrumb">
             <li><a href="{{URL::to('ar/admin/home')}}"><i class="icon-home2 position-left"></i> @lang('home.home')</a></li>
+            <li><a href="{{ URL::to('ar/admin/blogs') }}"><i class="icon-blogger position-left"></i> @lang('home.blogs')</a></li>
             <li class="active">@lang('home.blog_list')</li>
         </ul>
 
@@ -33,7 +34,7 @@
 
                 <ul class="dropdown-menu dropdown-menu-right">
                 <li><a href="{{ URL::to('ar/admin/setting') }}"><i class="icon-gear"></i>@lang('home.general_settings')</a></li>
-               
+
                 </ul>
             </li>
         </ul>
@@ -57,8 +58,8 @@
         @endif
             <!--  -->
             <table class="table text-nowrap table " id="table">
-                <thead>                  
-                <tr>                                     
+                <thead>
+                <tr>
                     <th class="col-md-2">#</th>
                     <th class="col-md-2">@lang('home.name_ar')</th>
                     <th class="col-md-2">@lang('home.name_en')</th>
@@ -66,7 +67,7 @@
                     <th class="col-md-2">@lang('home.status')</th>
                     <th class="col-md-2">@lang('home.edit')</th>
                     <th class="col-md-2">@lang('home.delete')</th>
-                    
+
                 </tr>
                 </thead>
                 <tbody>
@@ -84,14 +85,14 @@
                         @else
                             @lang('home.hide')
                         @endif
-                       
 
-                    </td> 
+
+                    </td>
                     <td>
                         <a href="{{URL::to('ar/admin/blogs/').'/'.$blog->id.'/edit'}}" class="btn btn-warning "><li class="icon-pencil5"></li></a>
                     </td>
-                   
-                    <td>@include('dashboard.blogs.delete_from_list')</td> 
+
+                    <td>@include('dashboard.blogs.delete_from_list')</td>
                 </tr>
                 @endforeach
                 </tbody>

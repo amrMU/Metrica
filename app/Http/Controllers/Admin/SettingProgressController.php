@@ -93,7 +93,7 @@ class SettingProgressController extends Controller
 				$request['external_resources'],
 				$path=base_path()
 			);
-			
+
 			foreach ($images as $key => $image) {
 				ExternalResources::create([
 					'setting_id'=>$setting_id,
@@ -101,8 +101,8 @@ class SettingProgressController extends Controller
 				]);
 			}
 		}
-		
-		return "Okay";	
+
+		return "Okay";
 	}
 
 	public static function store_mail_provider($request,$setting_id)
@@ -140,7 +140,7 @@ class SettingProgressController extends Controller
 		}
 		return "Okay";
 	}
-	
+
 	public static function store_email($request,$setting_id)
 	{
 		if (SettingEmail::count() > 0 ) {
@@ -155,7 +155,7 @@ class SettingProgressController extends Controller
 					'department'=>$request['department'][$key]
 				]);
 			}
-		
+
 		}
 
 		return "Okay";
@@ -166,7 +166,7 @@ class SettingProgressController extends Controller
 		if (SettingPhone::count() > 0 ) {
 			$delete_latest = SettingPhone::where('setting_id',$setting_id)->forceDelete();
 		}
-		
+
 		foreach ($request['phone'] as $key => $phone) {
 			if($phone != null ){
 				$create_phone = SettingPhone::create([
@@ -183,7 +183,7 @@ class SettingProgressController extends Controller
 		if (SettingWatsapp::count() > 0 ) {
 			$delete_latest = SettingWatsapp::where('setting_id',$setting_id)->forceDelete();
 		}
-		
+
 		foreach ($request['whatsapp'] as $key => $whatsapp) {
 			if($whatsapp != null ){
 				$create_phone = SettingWatsapp::create([
@@ -201,10 +201,10 @@ class SettingProgressController extends Controller
 		if (SettingSocialMedia::count() > 0 ) {
 			$delete_latest = SettingSocialMedia::where('setting_id',$setting_id)->forceDelete();
 		}
-		
+
 		foreach ($request['name_media_ar'] as $key => $brand_ar) {
 			if($brand_ar != null ){
-			
+
 				$create_phone = SettingSocialMedia::create([
 					'setting_id'=>$setting_id,
 					'name_ar'=>$request['name_media_ar'][$key],
@@ -215,7 +215,8 @@ class SettingProgressController extends Controller
 				if(isset($request['social_logo'])){
 					$image =ImagesController::uploadSingle(
 						$request['social_logo'][$key],
-						$path=public_path().'/uploads/images/logos/'.$request['name_media_en'][$key]
+						$path=public_path().'/uploads/images/logos/'.$request['name_media_en'][$key],
+						'/uploads/images/logos/'.$request['name_media_en'][$key]
 					);
 					$create_phone->update([
 						'icon'=>@$image,

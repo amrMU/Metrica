@@ -8,7 +8,8 @@
             <div class="page-header page-header-default">
                 <div class="page-header-content">
                     <div class="page-title">
-                        <h4><i class="icon-arrow-right6 position-left"></i> <span class="text-semibold"> <?php echo app('translator')->getFromJson('home.dashboard'); ?> - <?php echo app('translator')->getFromJson('home.blogs'); ?> - <?php echo app('translator')->getFromJson('home.edit_page_info'); ?></span></h4>
+                        <h4><i class="icon-arrow-right6 position-left"></i>
+                           <span class="text-semibold"> <?php echo app('translator')->getFromJson('home.dashboard'); ?> - <?php echo app('translator')->getFromJson('home.blogs'); ?> - <?php echo app('translator')->getFromJson('home.edit_page_info'); ?></span></h4>
                     </div>
 
                     <div class="heading-elements">
@@ -16,7 +17,6 @@
                          </div>
                     </div>
                 </div>
-
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
                         <li><a href="<?php echo e(URL::to('ar/admin/home')); ?>"><i class="icon-home2 position-left"></i> <?php echo app('translator')->getFromJson('home.home'); ?></a></li>
@@ -33,7 +33,7 @@
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-right">
-                              
+
                               <li><a href="<?php echo e(URL::to('ar/admin/setting')); ?>"><i class="icon-gear"></i><?php echo app('translator')->getFromJson('home.settings'); ?></a></li>
                             </ul>
                         </li>
@@ -61,7 +61,6 @@
                             <form class="form-horizontal form-validate-jquery" method="post" action="<?php echo e(route('blogs.update',$info)); ?>" enctype='multipart/form-data'  >
                             <input name="_method" type="hidden" value="PUT">
                             <input name="use" type="hidden" value="<?php echo e(@$info->id); ?>">
-
                                 <?php if($errors->any()): ?>
                                 <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="alert alert-danger alert-dismissible">
@@ -79,7 +78,7 @@
                                 <?php echo csrf_field(); ?>
                                 
                                 <fieldset class="content-group">
-                                <legend class="text-bold"><?php echo app('translator')->getFromJson('home.add_new_category'); ?></legend>
+                                <legend class="text-bold"><?php echo app('translator')->getFromJson('home.edit_page_info'); ?></legend>
                                     <!-- title ar input -->
                                     <div class="form-group">
                                         <label class="control-label col-lg-3"><?php echo app('translator')->getFromJson('home.title_ar'); ?> <span class="text-danger" title="<?php echo app('translator')->getFromJson('home.required'); ?>">*</span></label>
@@ -120,7 +119,7 @@
                                              <textarea name="content_ar" id="editor1" rows="4" cols="4"  placeholder="<?php echo app('translator')->getFromJson('home.content_ar'); ?>"><?php echo e(@$info->content_ar); ?></textarea>
                                         </div>
                                     </div>
-                                   
+
                                     
                                     
                                      <div class="form-group">
@@ -152,7 +151,7 @@
                                         </div>
                                     </div>
                                     
-                                     
+
                                     <!-- Logo uploader -->
                                     <div class="form-group">
                                         <label class="control-label col-lg-3"><?php echo app('translator')->getFromJson('home.image'); ?> <span class="text-danger" title="<?php echo app('translator')->getFromJson('home.required'); ?>"> *</span></label>
@@ -161,12 +160,12 @@
                                         </div>
                                     </div>
                                     <!-- /Logo uploader -->
-                                 
-                                 
+
+
                                 </fieldset>
                                 
-                              
-                           
+
+
                                 <div class="text-right">
                                     <button type="reset" class="btn btn-default" id="reset">Reset <i class="icon-reload-alt position-right"></i></button>
                                     <button type="submit" class="btn btn-primary">Submit <i class="icon-arrow-left13 position-right"></i></button>
@@ -178,7 +177,7 @@
                     <div class="col-md-2">
                     <img src="<?php echo e(url('/').'/'.@$info->image); ?>" class="img-responsive" style="max-width:100%" >
                     </div>
-                  
+
             </div>
              <!-- Content area -->
 
@@ -197,4 +196,5 @@
         });
     </script>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('dashboard.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

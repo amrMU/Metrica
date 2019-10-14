@@ -9,7 +9,8 @@
             <div class="page-header page-header-default">
                 <div class="page-header-content">
                     <div class="page-title">
-                        <h4><i class="icon-arrow-right6 position-left"></i> <span class="text-semibold"> @lang('home.dashboard') - @lang('home.blogs') - @lang('home.edit_page_info')</span></h4>
+                        <h4><i class="icon-arrow-right6 position-left"></i>
+                           <span class="text-semibold"> @lang('home.dashboard') - @lang('home.blogs') - @lang('home.edit_page_info')</span></h4>
                     </div>
 
                     <div class="heading-elements">
@@ -17,7 +18,6 @@
                          </div>
                     </div>
                 </div>
-
                 <div class="breadcrumb-line">
                     <ul class="breadcrumb">
                         <li><a href="{{ URL::to('ar/admin/home') }}"><i class="icon-home2 position-left"></i> @lang('home.home')</a></li>
@@ -34,7 +34,7 @@
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-right">
-                              
+
                               <li><a href="{{ URL::to('ar/admin/setting') }}"><i class="icon-gear"></i>@lang('home.settings')</a></li>
                             </ul>
                         </li>
@@ -62,8 +62,7 @@
                             <form class="form-horizontal form-validate-jquery" method="post" action="{{ route('blogs.update',$info) }}" enctype='multipart/form-data'  >
                             <input name="_method" type="hidden" value="PUT">
                             <input name="use" type="hidden" value="{{@$info->id}}">
-
-                                @if ($errors->any())
+                                @if($errors->any())
                                 @foreach ($errors->all() as $error)
                                 <div class="alert alert-danger alert-dismissible">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>{{ $error }}
@@ -78,7 +77,7 @@
                                 @csrf
                                 {{-- general Info --}}
                                 <fieldset class="content-group">
-                                <legend class="text-bold">@lang('home.add_new_category')</legend>
+                                <legend class="text-bold">@lang('home.edit_page_info')</legend>
                                     <!-- title ar input -->
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.title_ar') <span class="text-danger" title="@lang('home.required')">*</span></label>
@@ -119,7 +118,7 @@
                                              <textarea name="content_ar" id="editor1" rows="4" cols="4"  placeholder="@lang('home.content_ar')">{{ @$info->content_ar }}</textarea>
                                         </div>
                                     </div>
-                                   
+
                                     {{-- content ar --}}
                                     {{-- content en --}}
                                      <div class="form-group">
@@ -151,7 +150,7 @@
                                         </div>
                                     </div>
                                     {{--Show page --}}
-                                     
+
                                     <!-- Logo uploader -->
                                     <div class="form-group">
                                         <label class="control-label col-lg-3">@lang('home.image') <span class="text-danger" title="@lang('home.required')"> *</span></label>
@@ -160,12 +159,12 @@
                                         </div>
                                     </div>
                                     <!-- /Logo uploader -->
-                                 
-                                 
+
+
                                 </fieldset>
                                 {{-- general Info --}}
-                              
-                           
+
+
                                 <div class="text-right">
                                     <button type="reset" class="btn btn-default" id="reset">Reset <i class="icon-reload-alt position-right"></i></button>
                                     <button type="submit" class="btn btn-primary">Submit <i class="icon-arrow-left13 position-right"></i></button>
@@ -177,7 +176,7 @@
                     <div class="col-md-2">
                     <img src="{{url('/').'/'.@$info->image}}" class="img-responsive" style="max-width:100%" >
                     </div>
-                  
+
             </div>
              <!-- Content area -->
 

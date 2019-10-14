@@ -48,11 +48,11 @@ class BlogRequest extends FormRequest
                     'content_ar'=>'required',
                     'content_en'=>'required',
                     'url'=>'required',
-                    'image'=>'required|mimes:jpeg,bmp,png,jpg'
+                    'image'=>'mimes:jpeg,bmp,png,jpg'
                 ];
             }
             case 'PATCH':
 
-        }   
+        }
     }
 }

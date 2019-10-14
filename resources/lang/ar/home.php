@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-	
+
 	return [
 		'message_success'=>'تمت العمليه بنجاح',
 		'home'=>'الرئيسيه',
@@ -85,7 +85,7 @@
 		'header_delete_model'=>'هل أنت متأكد من إتمام هذا العمل؟',
 		'body_delete_model'=>'ستتم إزالة هذا من قاعدة البيانات الخاصة بك. ',
 
-		
+
 		'smtp_builder'=>'تكوين بريد ',
 		'mail_driver'=>'Mail Driver',
 		'mail_host'=>'استضافة البريد',
@@ -107,7 +107,7 @@
 		'fname'=>'الإسم الأول',
 		'lname'=>'الإسم الأخير',
 		'password'=>'كلمة المرور',
-		'password_confirmation'=>'تأكيد كلمة المرور', 
+		'password_confirmation'=>'تأكيد كلمة المرور',
 		'generate'=>'توليد',
 		'categories'=>'الأقسام',
 		'categories_list'=>'قائمة الأقسام',
